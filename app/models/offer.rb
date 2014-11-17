@@ -29,7 +29,7 @@ class Offer < ActiveRecord::Base
                   :localitate,
                   :cartier,
                   :zona,
-                  :addresa,
+                  :adresa,
                   :cod_postal,
                   :latitude,
                   :longitude,
@@ -37,7 +37,7 @@ class Offer < ActiveRecord::Base
                   :moneda,
                   :pret_inchiriere,
                   :pret_per,
-                  :commission,
+                  :comision,
                   :negociabil,
                   :sursa
 end

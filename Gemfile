@@ -5,10 +5,16 @@ gem 'rails', '3.2.16'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# Bootstra
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'sass-rails', '>= 3.2'
+# It is also recommended to use Autoprefixer with Bootstrap to add browser vendor prefixes automatically. Simply add the gem:
+gem 'autoprefixer-rails'
 # Gems used only for assets and not required
 # in production environments by default.
+
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

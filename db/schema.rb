@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(:version => 20141117161716) do
     t.string   "zone"
     t.string   "tip_proprietate"
     t.datetime "data_limita"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "offers", :force => true do |t|
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20141117161716) do
     t.string   "localitate"
     t.string   "cartier"
     t.string   "zona"
-    t.string   "addresa"
+    t.string   "adresa"
     t.string   "cod_postal"
     t.float    "latitude"
     t.float    "longitude"
@@ -65,11 +65,11 @@ ActiveRecord::Schema.define(:version => 20141117161716) do
     t.string   "moneda"
     t.integer  "pret_inchiriere"
     t.string   "pret_per"
-    t.string   "commission"
+    t.string   "comision"
     t.integer  "negociabil"
     t.boolean  "sursa"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
 end

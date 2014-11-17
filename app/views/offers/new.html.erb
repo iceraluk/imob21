@@ -1,2 +1,65 @@
-<h1>Offers#new</h1>
-<p>Find me in app/views/offers/new.html.erb</p>
+<%= form_for(@offer, :html => {:multipart => true, :class => "form-horizontal"} ) do |f| %>
+    <h4>Detalii generale</h4>
+
+    <div class="input-group">
+        <%= f.label :titlu, :class => "input-group-addon" %>
+        <%= f.text_field :titlu, :class => "form-control" %>
+    </div>
+
+    <h4>Detalii Pret</h4>
+
+    <div class="input-group">
+      <%= f.label :pret_vanzare, :class => "input-group-addon" %>
+      <%= f.text_field :pret_vanzare, :class => "form-control" %>
+    </div>
+
+    <div class="input-group">
+      <%= f.label :pret_inchiriere, :class => "input-group-addon" %>
+      <%= f.text_field :pret_inchiriere, :class => "form-control" %>
+    </div>
+
+    <div class="input-group">
+      <%= f.label :pret_per, :class => "input-group-addon" %>
+      <%= f.text_field :pret_per, :class => "form-control" %>
+    </div>
+
+    <div class="input-group">
+      <%= f.label :comision, :class => "input-group-addon" %>
+      <%= f.text_field :comision, :class => "form-control" %>
+    </div>
+
+    <div class="input-group">
+      <%= f.label :negociabil, :class => "input-group-addon" %>
+      <%= f.text_field :negociabil, :class => "form-control" %>
+    </div>
+
+    <h4>Localizare Oferta:</h4>
+
+    <div class="input-group">
+      <%= f.label :judet, :class => "input-group-addon" %>
+      <%= f.text_field :judet, :class => "form-control" %>
+    </div>
+    <div class="input-group">
+      <%= f.label :localitate, :class => "input-group-addon" %>
+      <%= f.text_field :localitate, :class => "form-control" %>
+    </div>
+    <div class="input-group">
+      <%= f.label :cartier, :class => "input-group-addon" %>
+      <%= f.text_field :cartier, :class => "form-control" %>
+    </div>
+    <div class="input-group">
+      <%= f.label :zona, :class => "input-group-addon" %>
+      <%= f.text_field :zona, :class => "form-control" %>
+    </div>
+    <div class="input-group">
+      <%= f.label :adresa, :class => "input-group-addon" %>
+      <%= f.text_field :adresa, :class => "form-control" %>
+    </div>
+    <div class="input-group">
+      <%= f.label :cod_postal, :class => "input-group-addon" %>
+      <%= f.text_field :cod_postal, :class => "form-control" %>
+    </div>
+
+    <%= f.submit "Save", :class => "btn btn-default", :disable_with => "Processing" %>
+    <%= link_to "Cancel", :back, :class => "btn btn-default" %>
+<% end %>

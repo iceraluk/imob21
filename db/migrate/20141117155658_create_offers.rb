@@ -31,7 +31,7 @@ class CreateOffers < ActiveRecord::Migration
       t.string :localitate
       t.string :cartier
       t.string :zona
-      t.string :addresa
+      t.string :adresa
       t.string :cod_postal
       t.float :latitude
       t.float :longitude
@@ -39,10 +39,9 @@ class CreateOffers < ActiveRecord::Migration
       t.string :moneda
       t.integer :pret_inchiriere
       t.string :pret_per
-      t.string :commission
+      t.string :comision
       t.integer :negociabil
       t.boolean :sursa
-
 
       t.timestamps
     end

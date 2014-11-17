@@ -2,7 +2,7 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
   def index
-    @offers = Client.all
+    @offers = Offer.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @offers.to_json, :callback => params[:callback] }
@@ -14,7 +14,6 @@ class OffersController < ApplicationController
   def new
     @offers = Offer.all
     @offer = Offer.new
-    add_breadcrumb "New", :new_admin_site_category_path
 
     respond_to do |format|
       format.html # new.html.erb
@@ -24,7 +23,6 @@ class OffersController < ApplicationController
 
   # GET /offers/1/edit
   def edit
-    add_breadcrumb "Edit"
     @offers = Offer.all
     @offer = Offer.find(params[:id])
   end
@@ -33,11 +31,11 @@ class OffersController < ApplicationController
   # POST /offers.json
   def create
     @offers = Offer.all
-    @offer = Offer.new(params[:category])
+    @offer = Offer.new(params[:offer])
 
     respond_to do |format|
-      if @offer.save(params[:category])
-        format.html { redirect_to new_admin_site_category_url, notice: 'Oferta a fost creata cu success.' }
+      if @offer.save(params[:offer])
+        format.html { redirect_to offers_path, notice: 'Oferta a fost creata cu success.' }
         format.json { head :no_content }
       else
         format.html { render action: "new" }
@@ -53,7 +51,7 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.update_attributes(params[:offer])
-        format.html { redirect_to new_offer_url, notice: 'Oferta a fost updatata cu success.' }
+        format.html { redirect_to offers_path, notice: 'Oferta a fost updatata cu success.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -69,7 +67,7 @@ class OffersController < ApplicationController
     @offer.destroy
 
     respond_to do |format|
-      format.html { redirect_to new_offer_url, notice: 'Oferta a fost stearsa cu success.' }
+      format.html { redirect_to offers_path, notice: 'Oferta a fost stearsa cu success.' }
       format.json { head :no_content }
     end
   end
