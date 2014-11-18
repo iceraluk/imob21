@@ -6,6 +6,7 @@ class CreateOffers < ActiveRecord::Migration
       t.string :tip_oferta
       t.string :tip_operatiune
       t.integer :nr_camere
+      t.integer :dormitoare
       t.integer :confort
       t.integer :suprafata_utila_mp
       t.integer :nr_bai

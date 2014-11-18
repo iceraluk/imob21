@@ -1,7 +1,7 @@
 
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><%= link_to "Adauga Oferta", new_offer_path %></li>
-  <li role="presentation"><%= link_to "Adauga Oferta", new_offer_path %></li>
-  <li role="presentation"><%= link_to "Adauga Oferta", new_offer_path %></li>
+  <li role="presentation" class="<%= 'active' if controller.controller_name == 'offers' && controller.action_name == 'index' %>"><%= link_to "Home", offers_path %></li>
+  <li role="presentation" class="<%= 'active' if controller.controller_name == 'offers' %>"><%= link_to "Oferte", offers_path %></li>
+  <li role="presentation" class="<%= 'active' if controller.controller_name == 'clients' %>"><%= link_to "Clients", clients_path %></li>
 </ul>

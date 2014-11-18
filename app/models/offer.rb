@@ -4,6 +4,7 @@ class Offer < ActiveRecord::Base
                   :tip_oferta,
                   :tip_operatiune,
                   :nr_camere,
+                  :dormitoare,
                   :confort,
                   :suprafata_utila_mp,
                   :nr_bai,
