@@ -1,5 +1,7 @@
 Imob21::Application.routes.draw do
 
+  devise_for :admins
+
   resources :offers
   resources :clients
   root :to => 'offers#index'

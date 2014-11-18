@@ -31,6 +31,10 @@ gem 'pg', '~> 0.17.1'
 # JQuery
 gem 'jquery-datatables-rails', '~> 3.0.0'
 
+
+# Devise
+gem 'devise'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
