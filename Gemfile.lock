@@ -123,7 +123,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.3.1)
   coffee-rails (~> 3.2.1)
-  devise
+  devise (~> 2.2.8)
   jquery-datatables-rails (~> 3.0.0)
   jquery-rails
   pg (~> 0.17.1)
