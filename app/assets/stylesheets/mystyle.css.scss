@@ -13,3 +13,12 @@
       }
     }
 }
+
+#datatable_wrapper{
+  .row{
+    margin-left: 0 !important;
+  }
+  .pagination{
+    border: none
+  }
+}

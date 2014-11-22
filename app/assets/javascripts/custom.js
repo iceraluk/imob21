@@ -443,7 +443,7 @@ jQuery(document).ready(function(){
     /*	Twitter widget
      /*-----------------------------------------------------------------------------------*/
 
-    twitterFetcher.fetch('398073500683870209', 'twitter_update_list', 1, true, false, true, dateFormatter, false);
+//    twitterFetcher.fetch('398073500683870209', 'twitter_update_list', 1, true, false, true, dateFormatter, false);
 
 
 });
