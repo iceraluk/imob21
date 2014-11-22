@@ -14,7 +14,6 @@ class OwnersController < ApplicationController
   # GET /owners/new
   # GET /owners/new.jsonundefined b
   def new
-    @owners = Owner.all
     @owner = Owner.new
 
     respond_to do |format|
@@ -25,14 +24,12 @@ class OwnersController < ApplicationController
 
   # GET /owners/1/edit
   def edit
-    @owners = Owner.all
     @owner = Owner.find(params[:id])
   end
 
   # POST /owners
   # POST /owners.json
   def create
-    @owners = Owner.all
     @owner = Owner.new(params[:owner])
 
     respond_to do |format|

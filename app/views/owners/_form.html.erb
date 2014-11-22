@@ -1,17 +1,17 @@
-<%= form_for(@client, :html => {:multipart => true, :class => "form-horizontal"} ) do |f| %>
+<%= form_for(@owner, :html => {:multipart => true, :class => "form-horizontal"} ) do |f| %>
 <h4>Detalii Proprietar</h4>
     <div class="input-group">
-      <%= f.label :nume, :class => "input-group-addon" %>
+      <%= f.label :nume,"Nume*", :class => "input-group-addon" %>
       <%= f.text_field :nume, :class => "form-control" %>
     </div>
 
     <div class="input-group">
-      <%= f.label :prenume, :class => "input-group-addon" %>
+      <%= f.label :prenume,"Prenume*", :class => "input-group-addon" %>
       <%= f.text_field :prenume, :class => "form-control" %>
     </div>
 
     <div class="input-group">
-      <%= f.label :telefon1, :class => "input-group-addon" %>
+      <%= f.label :telefon1, "Telefon1*", :class => "input-group-addon" %>
       <%= f.text_field :telefon1, :class => "form-control" %>
     </div>
 
@@ -28,6 +28,10 @@
     <div class="input-group">
       <%= f.label :email2, :class => "input-group-addon" %>
       <%= f.text_field :email2, :class => "form-control" %>
+    </div>
+    <div class="input-group">
+      <%= f.label :comentarii, :class => "input-group-addon" %>
+      <%= f.text_area :comentarii, :class => "form-control", :style => "height: 100px" %>
     </div>
 <h4>Alte informatii</h4>
     <div class="input-group">
@@ -62,26 +66,9 @@
       <%= f.label :cui, :class => "input-group-addon" %>
       <%= f.text_field :cui, :class => "form-control" %>
     </div>
-    <div class="input-group">
-      <%= f.label :comentarii, :class => "input-group-addon" %>
-      <%= f.text_field :comentarii, :class => "form-control" %>
+
+    <div class="form-actions">
+        <%= f.submit "Save", :class => "real-btn btn", :disable_with => "Processing" %>
+        <%= link_to "Cancel", :back, :class => "real-btn btn-grey cancel-btn" %>
     </div>
-
-
-    <%= f.submit "Save", :class => "btn btn-default", :disable_with => "Processing" %>
-    <%= link_to "Cancel", :back, :class => "btn btn-default" %>
 <% end %>
-
-email1
-:email2
-:cnp
-:adresa
-:judet
-:localitate
-:tara
-:nume_firma
-:adresa_firma
-:nr_inregistrare
-:cui
-:comentarii
-:data_nasterii
