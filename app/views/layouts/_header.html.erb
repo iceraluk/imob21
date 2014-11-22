@@ -1,0 +1,46 @@
+
+
+      <div id="header-top" class="clearfix">
+
+        <h2 id="contact-email">
+          <i class="email"></i> Contact : <a href="mailto:info@yourwebsite.com">contact@imob21.ro</a>
+        </h2>
+
+        <!-- Social Navigation -->
+        <ul class="social_networks clearfix">
+          <li class="facebook">
+            <a target="_blank" href="https://www.facebook.com"><i class="icon-facebook"></i></a>
+          </li>
+          <li class="twitter">
+            <a target="_blank" href="https://twitter.com"><i class="icon-twitter"></i></a>
+          </li>
+          <li class="gplus">
+            <a target="_blank" href="https://plus.google.com"><i class="icon-google-plus"></i></a>
+          </li>
+          <li class="rss">
+            <a target="_blank" href="#"> <i class="icon-rss"></i></a>
+          </li>
+        </ul>
+
+
+        <div class="admin-menu">
+            <% if admin_signed_in? %>
+                <%= render 'layouts/admin_menu' %>
+            <% else %>
+                  <%= link_to 'Log In', new_admin_session_path %>
+            <% end %>
+        </div>
+      </div>
+
+
+      <!-- Logo -->
+      <div id="logo">
+
+        <a title="Real Homes" href="index.html">
+          <%= image_tag "logo.png" , :alt => "Imob21" %>
+        </a>
+
+        <div class="tag-line">
+          <!--<span>Just another HTML template</span>-->
+        </div>
+      </div>

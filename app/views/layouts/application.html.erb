@@ -1,17 +1,57 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
 <head>
   <title>Imob21</title>
+  <!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Web Font -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
 </head>
 <body>
 
-<%= render 'layouts/menu' %>
+<!-- Start Header -->
+<div class="header-wrapper">
+
+  <div class="container"><!-- Start Header Container -->
+
+    <header id="header" class="clearfix">
+
+      <%= render 'layouts/header' %>
 
 
-<%= yield %>
+      <%= render "layouts/user_menu" %>
+
+    </header>
+
+  </div>
+</div>
+
+<!-- Page Head -->
+<div class="page-head" style="background-repeat: no-repeat;background-position: center top;background-image: url('images/temp-images/page-head-image.jpg'); ">
+  <div class="container">
+    <div class="wrap clearfix">
+        <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
