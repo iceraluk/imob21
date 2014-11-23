@@ -16,4 +16,10 @@ class Owner < ActiveRecord::Base
                   :cui,
                   :comentarii,
                   :data_nasterii
+
+  has_many :offers
+
+  validates_presence_of :nume, :prenume, :telefon1
+
+  scope :all_ordered, order(:nume, :prenume)
 end

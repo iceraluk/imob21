@@ -32,6 +32,7 @@
   .input-group{
     width: 100%;
     padding: 10px 0;
+    height: 54px;
     .input-group-addon{
       width: 200px;
       text-align: right;
@@ -43,6 +44,9 @@
     .form-control{
       width: 50%;
       min-width: 120px;
+    }
+    #offer_moneda{
+        width: 70px;
     }
   }
 }

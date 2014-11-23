@@ -40,5 +40,8 @@ class Offer < ActiveRecord::Base
                   :pret_per,
                   :comision,
                   :negociabil,
-                  :sursa
+                  :sursa,
+                  :owner_id
+
+  belongs_to :owner
 end

@@ -2,8 +2,14 @@
     <h4>Detalii generale</h4>
 
     <div class="input-group">
-      <%= f.label :titlu, :class => "input-group-addon" %>
+      <%= f.label :titlu,"Titlu*", :class => "input-group-addon" %>
       <%= f.text_field :titlu, :class => "form-control" %>
+    </div>
+
+    <div class="input-group">
+      <%= f.label :owner_id, "Proprietar*", :class => "input-group-addon" %>
+      <%= f.select(:owner_id, Owner.all_ordered.collect{|o|[o.nume.to_s + " " + o.prenume.to_s , o.id]}, {:class => "form-control"}) %>
+      <i><%= link_to "+ Adauga proprietar", new_owner_path %></i>
     </div>
 
     <h4>Detalii Pret</h4>
@@ -11,6 +17,7 @@
     <div class="input-group">
       <%= f.label :pret_vanzare, :class => "input-group-addon" %>
       <%= f.text_field :pret_vanzare, :class => "form-control" %>
+      <%= f.select(:moneda, ['RON', ['EUR'], ['USD']], {:class => "form-control moneda"}) %>
     </div>
 
     <div class="input-group">
@@ -64,17 +71,17 @@
 
     <div class="input-group">
       <%= f.label :tip_oferta, :class => "input-group-addon" %>
-      <%= f.text_field :tip_oferta, :class => "form-control" %>
+      <%= f.select(:tip_oferta, ['Apartament','Garsioniera','Casa', 'Spatiu Comercial', "Birour", "Teren extravilan", "Teren Intravilan"], {:class => "form-control"}) %>
     </div>
 
     <div class="input-group">
       <%= f.label :tip_operatiune, :class => "input-group-addon" %>
-      <%= f.text_field :tip_operatiune, :class => "form-control" %>
+      <%= f.select(:tip_oferta, ["Vanzare", "Inchiriere"], {:class => "form-control"}) %>
     </div>
 
     <div class="input-group">
       <%= f.label :nr_camere, :class => "input-group-addon" %>
-      <%= f.text_field :nr_camere, :class => "form-control" %>
+      <%= f.select(:nr_camere, ["1", "2", "3", "4", "5+"], {:class => "form-control"}) %>
     </div>
 
     <div class="input-group">
@@ -149,10 +156,12 @@
 
     <div class="input-group">
       <%= f.label :mansarda_imobil, :class => "input-group-addon" %>
+      <%= f.check_box :mansarda_imobil %>
     </div>
 
     <div class="input-group">
       <%= f.label :demisol, :class => "input-group-addon" %>
+      <%= f.check_box :demisol %>
     </div>
 
     <div class="input-group">
