@@ -12,6 +12,20 @@
       <i><%= link_to "+ Adauga proprietar", new_owner_path %></i>
     </div>
 
+    <div class="input-group">
+      <%= f.label :status, "Status*", :class => "input-group-addon" %>
+      <%= f.select(:status, ["Activ", "Inchiriat", "Tranzactionat"]) %>
+    </div>
+
+    <div class="input-group">
+      <%= f.label :active, "Afisare pe site*", :class => "input-group-addon" %>
+      <%= f.select(:active, [["Publicat", true], ["Nepublicat", false]], {:include_blank => true}) %>
+    </div>
+    <div class="input-group">
+      <%= f.label :exclusiva,"Oferta exclusiva", :class => "input-group-addon" %>
+      <%= f.check_box :exclusiva %>
+    </div>
+
     <h4>Detalii Pret</h4>
 
     <div class="input-group">
@@ -42,10 +56,8 @@
 
     <h4>Localizare Oferta:</h4>
 
-    <div class="input-group">
-      <%= f.label :judet, :class => "input-group-addon" %>
-      <%= f.text_field :judet, :class => "form-control" %>
-    </div>
+      <%= f.hidden_field :judet, :value => "Prahova", :class => "form-control" %>
+
     <div class="input-group">
       <%= f.label :localitate, :class => "input-group-addon" %>
       <%= f.text_field :localitate, :class => "form-control" %>

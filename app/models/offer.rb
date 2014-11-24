@@ -41,7 +41,9 @@ class Offer < ActiveRecord::Base
                   :comision,
                   :negociabil,
                   :sursa,
-                  :owner_id
+                  :owner_id,
+                  :status,
+                  :exclusiva
 
   belongs_to :owner
 end

@@ -1,9 +1,20 @@
-<tr>
+<tr class="inactive">
   <td>
+    <div>
     <%= offer.id %>
+    </div>
   </td>
   <td>
     <%= offer.titlu %>
+  </td>
+  <td>
+    <%= link_to offer.owner.try(:nume).to_s + " " + offer.owner.try(:prenume).to_s, edit_owner_path(offer.owner.id) %>
+  </td>
+  <td>
+    <%= offer.owner.try(:telefon1) %>
+  </td>
+  <td>
+    <%= offer.owner.try(:email1) %>
   </td>
   <td>
     <%= link_to "Edit", edit_offer_path(offer) %>
