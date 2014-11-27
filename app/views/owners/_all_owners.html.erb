@@ -3,10 +3,10 @@
     <%= owner.id %>
   </td>
   <td>
-    <%= owner.nume %>
+    <%= link_to owner.nume, edit_owner_path(owner) %>
   </td>
   <td>
-    <%= owner.prenume %>
+    <%= link_to owner.prenume, edit_owner_path(owner) %>
   </td>
   <td>
     <%= owner.telefon1 %>

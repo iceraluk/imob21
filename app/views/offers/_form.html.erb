@@ -206,6 +206,9 @@
       <%= f.text_field :video, :class => "form-control" %>
     </div>
 
-    <%= f.submit "Save", :class => "btn btn-default", :disable_with => "Processing" %>
-    <%= link_to "Cancel", :back, :class => "btn btn-default" %>
+    <div class="form-actions">
+      <%= f.submit "Save", :class => "real-btn btn", :disable_with => "Processing" %>
+      <%= link_to "Cancel", :back, :class => "real-btn btn-grey cancel-btn" %>
+    </div>
+
 <% end %>
