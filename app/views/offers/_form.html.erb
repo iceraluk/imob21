@@ -31,7 +31,7 @@
     <div class="input-group">
       <%= f.label :pret_vanzare, :class => "input-group-addon" %>
       <%= f.text_field :pret_vanzare, :class => "form-control" %>
-      <%= f.select(:moneda, ['RON', ['EUR'], ['USD']], {:class => "form-control moneda"}) %>
+      <%= f.select(:moneda, ['RON', 'EUR', 'USD'], {:class => "form-control moneda"}) %>
     </div>
 
     <div class="input-group">
@@ -71,7 +71,7 @@
       <%= f.text_field :zona, :class => "form-control" %>
     </div>
     <div class="input-group">
-      <%= f.label :adresa, :class => "input-group-addon" %>
+      <%= f.label :adresa,"Adresa(neafisata)", :class => "input-group-addon" %>
       <%= f.text_field :adresa, :class => "form-control" %>
     </div>
     <div class="input-group">

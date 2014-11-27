@@ -1,14 +1,14 @@
-<tr class="inactive">
+<tr class="<%=  'inactive' if offer.is_inactive? %>">
   <td>
     <div>
-    <%= offer.id %>
+      <%= offer.id %>
     </div>
   </td>
   <td>
     <%= offer.titlu %>
   </td>
   <td>
-    <%= link_to offer.owner.try(:nume).to_s + " " + offer.owner.try(:prenume).to_s, edit_owner_path(offer.owner.id) %>
+    <%= link_to offer.owner.try(:nume).to_s + " " + offer.owner.try(:prenume).to_s, owner_path(offer.owner.id) %>
   </td>
   <td>
     <%= offer.owner.try(:telefon1) %>

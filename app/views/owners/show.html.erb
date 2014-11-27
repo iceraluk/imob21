@@ -1,0 +1,55 @@
+<h4>Detalii Proprietar</h4>
+<p>
+Nume: <%= @owner.nume %><br>
+Prenume: <%= @owner.prenume %><br>
+Telefon1: <%= @owner.telefon1 %><br>
+Telefon2: <%= @owner.telefon2 %><br>
+Email1: <%= @owner.email1 %><br>
+Email2: <%= @owner.email2 %><br>
+</p>
+<h4>Alte Informatii</h4>
+<p>
+CNP: <%= @owner.cnp %><br>
+Adresa: <%= @owner.adresa %><br>
+Judet: <%= @owner.judet %><br>
+Localitate: <%= @owner.localitate %><br>
+Tara: <%= @owner.tara %><br>
+Nume Firma: <%= @owner.nume_firma %><br>
+Adresa Firma: <%= @owner.adresa_firma %><br>
+Nr Inregistrare: <%= @owner.nr_inregistrare %><br>
+CUI: <%= @owner.cui %><br>
+Comentarii: <%= @owner.comentarii %><br>
+Data nasterii: <%= @owner.data_nasterii %>
+</p>
+
+<h4>Oferte Proprietar</h4>
+
+<table id="datatable" class="table table-striped table-bordered table-hover dataTable no-footer">
+  <thead>
+  <tr>
+    <th>
+      #
+    </th>
+    <th>
+      Titlu
+    </th>
+    <th>
+      Proprietar
+    </th>
+    <th>
+      Proprietar Telefon1
+    </th>
+    <th>
+      Proprietar Email1
+    </th>
+    <th>
+      Edit
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @owner.offers.each do |o| %>
+      <%= render "offers/all_offers", offer: o %>
+  <% end %>
+  </tbody>
+</table>

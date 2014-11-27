@@ -11,6 +11,16 @@ class OwnersController < ApplicationController
     end
   end
 
+  # GET /owner/1
+  # GET /owner/1.json
+  def show
+    @owner = Owner.find(params[:id])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @owner.to_json, :callback => params[:callback] }
+    end
+  end
+
   # GET /owners/new
   # GET /owners/new.jsonundefined b
   def new

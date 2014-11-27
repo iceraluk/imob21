@@ -24,13 +24,15 @@ li{
 }
 a{
   font-weight: bold;
-  color: #4dc7ec;
-}
-a:hover{
   color: #ec894d;
 }
+a:hover{
+  color: #e3712c;
+}
 .inactive{
-  background-color: red;
+  td {
+    background-color: #F2BDBD !important;
+  }
 }
 }
 

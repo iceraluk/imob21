@@ -35,15 +35,21 @@ class Offer < ActiveRecord::Base
                   :latitude,
                   :longitude,
                   :pret_vanzare,
-                  :moneda,
+                  :moneda, #'RON', 'EUR', 'USD'
                   :pret_inchiriere,
                   :pret_per,
                   :comision,
                   :negociabil,
                   :sursa,
                   :owner_id,
-                  :status,
+                  :status, #"Activ", "Inchiriat", "Tranzactionat"
                   :exclusiva
 
   belongs_to :owner
+
+  def is_inactive?
+    return true if !active
+    return true if active && status != 'Activ'
+    return false
+  end
 end
