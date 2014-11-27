@@ -36,6 +36,9 @@ gem 'jquery-datatables-rails', '~> 3.0.0'
 # Devise
 gem 'devise', '~> 2.2.8'
 
+# Carrierwave
+gem 'carrierwave'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -46,6 +46,8 @@ class Offer < ActiveRecord::Base
                   :exclusiva
 
   belongs_to :owner
+  has_many :offer_images
+
 
   def is_inactive?
     return true if !active
