@@ -26,10 +26,7 @@
       <%= f.check_box :exclusiva %>
     </div>
 
-    <%= f.fields_for :offer_images do |builder| %>
-        <%= render "offer_image_fields", f: builder %>
-    <% end %>
-    <%= link_to_add_fields "Adauga Imagine",f , :offer_images %>
+    <%= render 'offer_images', f: f %>
 
     <h4>Detalii Pret</h4>
 

@@ -42,8 +42,20 @@ gem "mini_magick"
 # Carrierwave
 gem 'carrierwave', '~>0.9.0'
 
+# To upload to Amazon S3
+gem 'fog', "~> 1.25.0"
+
+# For background jobs
+gem 'sidekiq', "~> 3.2.3"
+
 # Upload files straight to Amazon s3
 gem 'carrierwave_direct', '~>0.0.14'
+
+# Handle secret api keys
+gem "econfig", require: "econfig/rails"
+
+# jQuery fileupload
+gem "jquery-fileupload-rails", github: 'cipacda/jquery-fileupload-rails' # Pull in the latest version
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
