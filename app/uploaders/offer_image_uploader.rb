@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class OfferImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -9,6 +10,23 @@ class OfferImageUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
+
+  process :convert => 'png'
+
+  include CarrierWave::MimeTypes
+  process :set_content_type
+
+  version :featured do
+    process :resize_to_fill => [246, 162]
+  end
+
+  version :post do
+    process :resize_to_fill => [830, 323]
+  end
+
+  version :listing do
+    process :resize_to_fill => [770, 382]
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

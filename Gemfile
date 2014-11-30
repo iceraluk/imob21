@@ -36,6 +36,9 @@ gem 'jquery-datatables-rails', '~> 3.0.0'
 # Devise
 gem 'devise', '~> 2.2.8'
 
+# MiniMagick (You need to install imagemagick first with 'brew install imagemagick')
+gem "mini_magick"
+
 # Carrierwave
 gem 'carrierwave', '~>0.9.0'
 
