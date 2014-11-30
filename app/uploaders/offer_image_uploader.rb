@@ -7,6 +7,10 @@ class OfferImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
+  include Sprockets::Helpers::RailsHelper
+  include Sprockets::Helpers::IsolatedHelper
+  process :convert => 'png'
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
@@ -28,10 +32,40 @@ class OfferImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [770, 382]
   end
 
-  # Override the directory where uploaded files will be stored.
-  # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    if model.id
+      "uploads/offer_images/#{model.id}"
+    else
+      "uploads/offer_images/previews"
+    end
+  end
+
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
+
+  def full_filename(for_file)
+    filename  = for_file.pathmap("%n")
+    extension = for_file.pathmap("%x")
+    [version_name, filename].compact.join('_') + extension
+  end
+
+  def default_url
+    "/assets/" + [version_name, "default_offer_image.png"].compact.join('_')
+  end
+
+  def will_include_content_type
+    true
+  end
+
+  default_content_type  'image/jpeg'
+
+  def full_filename(for_file)
+    if model.image_token
+      [version_name, model.image_token].compact.join('_') + for_file.pathmap("%x")
+    else
+      [version_name, for_file.pathmap("%n")].compact.join('_') + for_file.pathmap("%x")
+    end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

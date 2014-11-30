@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-fileupload
 //= require_tree .
+//= require jquery-fileupload/basic
+//= require jquery.ui.all
+//= require unorm
+//= require unormdata
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap

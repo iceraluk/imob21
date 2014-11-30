@@ -33,6 +33,8 @@ gem 'pg', '~> 0.17.1'
 gem 'jquery-datatables-rails', '~> 3.0.0'
 
 
+gem "jquery-ui-rails", "~> 4.0.4"
+
 # Devise
 gem 'devise', '~> 2.2.8'
 

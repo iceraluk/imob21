@@ -12,7 +12,6 @@ jQuery ->
       else if types.test(file.type) || types.test(file.name)
         # TODO: This needs to be deffered as its async for the time being it does nothing
         image_validator = new ImageValidator(file)
-        data.context = $(tmpl("template-upload", file))
         $("#fileupload").append(data.context)
         $("#Content-Type").val(file.type)
         data.submit()

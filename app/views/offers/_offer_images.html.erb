@@ -22,7 +22,7 @@
         <%= f.fields_for :offer_images, offer_image, include_id: true do |e| %>
             <li class="thumbnail main" >
               <p class='trash_qa_tool trash-image' ></p>
-              <%= image_tag(offer_image.image.listing, class: "offer-image-#{offer_image.image.model.id}") unless offer_image.image.blank? %>
+              <%= image_tag(offer_image.image, class: "offer-image-#{offer_image.image.model.id}") unless offer_image.image.blank? %>
               <div class="ribbon-wrapper"><div class="ribbon">Main</div></div>
               <% offer_image.key = offer_image.image.path %>
               <%= e.hidden_field :key, class: "offer-image-key" %>
