@@ -37,7 +37,10 @@ gem 'jquery-datatables-rails', '~> 3.0.0'
 gem 'devise', '~> 2.2.8'
 
 # Carrierwave
-gem 'carrierwave'
+gem 'carrierwave', '~>0.9.0'
+
+# Upload files straight to Amazon s3
+gem 'carrierwave_direct', '~>0.0.14'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

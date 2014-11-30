@@ -14,8 +14,8 @@ class OffersController < ApplicationController
   # GET /offers/new
   # GET /offers/new.jsonundefined b
   def new
-    @offers = Offer.all
     @offer = Offer.new
+    @offer.offer_images.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -25,14 +25,12 @@ class OffersController < ApplicationController
 
   # GET /offers/1/edit
   def edit
-    @offers = Offer.all
     @offer = Offer.find(params[:id])
   end
 
   # POST /offers
   # POST /offers.json
   def create
-    @offers = Offer.all
     @offer = Offer.new(params[:offer])
 
     respond_to do |format|

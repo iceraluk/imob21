@@ -43,10 +43,12 @@ class Offer < ActiveRecord::Base
                   :sursa,
                   :owner_id,
                   :status, #"Activ", "Inchiriat", "Tranzactionat"
-                  :exclusiva
+                  :exclusiva,
+                  :offer_images_attributes
 
   belongs_to :owner
   has_many :offer_images
+  accepts_nested_attributes_for :offer_images, allow_destroy: true
 
 
   def is_inactive?

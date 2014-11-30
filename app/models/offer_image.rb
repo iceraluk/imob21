@@ -3,5 +3,5 @@ class OfferImage < ActiveRecord::Base
 
   belongs_to :offer
 
-  # mount_uploaders :image, OfferImageUploader
+  mount_uploader :image, OfferImageUploader
 end
