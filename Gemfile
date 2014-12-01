@@ -37,13 +37,10 @@ gem 'jquery-datatables-rails', '~> 3.0.0'
 gem 'devise', '~> 2.2.8'
 
 # MiniMagick (You need to install imagemagick first with 'brew install imagemagick')
-gem "mini_magick"
+gem "mini_magick", '~> 3.4'
 
 # Carrierwave
 gem 'carrierwave', '~>0.9.0'
-
-# Upload files straight to Amazon s3
-gem 'carrierwave_direct', '~>0.0.14'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
