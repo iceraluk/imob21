@@ -1,35 +1,36 @@
-<%= link_to " Adauga Proprietar", new_owner_path, :class => "real-btn btn", :style => "margin: 40px 0" %>
+<div class="inner-wrapper">
+    <%= link_to " Adauga Proprietar", new_owner_path, :class => "real-btn btn", :style => "margin: 40px 0" %>
 
-<table id="datatable" class="table table-striped table-bordered table-hover dataTable no-footer">
-  <thead>
-  <tr>
-    <th>
-      #
-    </th>
-    <th>
-      Nume
-    </th>
-    <th>
-      Prenume
-    </th>
-    <th>
-      Telefon 1
-    </th>
-    <th>
-      Email 1
-    </th>
-    <th>
-      Edit
-    </th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @owners.each do |o| %>
-      <%= render "all_owners", owner: o %>
-  <% end %>
-  </tbody>
-</table>
-
+    <table id="datatable" class="table table-striped table-bordered table-hover dataTable no-footer">
+      <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th>
+          Nume
+        </th>
+        <th>
+          Prenume
+        </th>
+        <th>
+          Telefon 1
+        </th>
+        <th>
+          Email 1
+        </th>
+        <th>
+          Edit
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @owners.each do |o| %>
+          <%= render "all_owners", owner: o %>
+      <% end %>
+      </tbody>
+    </table>
+</div>
 
 
 

@@ -1,35 +1,37 @@
-<%= link_to " Adauga Oferta", new_offer_path, :class => "real-btn btn", :style => "margin: 40px 0" %>
 
-<table id="datatable" class="table table-striped table-bordered table-hover dataTable no-footer">
-  <thead>
-  <tr>
-    <th>
-      #
-    </th>
-    <th>
-      Titlu
-    </th>
-    <th>
-      Proprietar
-    </th>
-    <th>
-      Proprietar Telefon1
-    </th>
-    <th>
-      Proprietar Email1
-    </th>
-    <th>
-      Edit
-    </th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @offers.each do |o| %>
-      <%= render "offers/all_offers", offer: o %>
-  <% end %>
-  </tbody>
-</table>
+<div class="inner-wrapper">
+    <%= link_to " Adauga Oferta", new_offer_path, :class => "real-btn btn", :style => "margin: 40px 0" %>
 
+    <table id="datatable" class="table table-striped table-bordered table-hover dataTable no-footer">
+      <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th>
+          Titlu
+        </th>
+        <th>
+          Proprietar
+        </th>
+        <th>
+          Proprietar Telefon1
+        </th>
+        <th>
+          Proprietar Email1
+        </th>
+        <th>
+          Edit
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @offers.each do |o| %>
+          <%= render "offers/all_offers", offer: o %>
+      <% end %>
+      </tbody>
+    </table>
+</div>
 
 
 

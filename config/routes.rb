@@ -5,7 +5,7 @@ Imob21::Application.routes.draw do
   resources :offers
   resources :clients
   resources :owners
-  root :to => 'offers#index'
+  root :to => 'b2c#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
