@@ -11,4 +11,7 @@
 *= require_self
 *= require dataTables/jquery.dataTables
 *= require_tree .
+*= require flexslider/flexslider
+*= require prettyphoto/prettyPhoto
+*= require swipebox/swipebox
 */

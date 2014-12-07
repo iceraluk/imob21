@@ -13,5 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require flexslider/jquery.flexslider.js
+//= require elastislide/jquery.easing.1.3.js
+//= require elastislide/jquery.elastislide.js
+//= require swipebox/jquery.swipebox.min.js
+//= require prettyphoto/jquery.prettyPhoto.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
