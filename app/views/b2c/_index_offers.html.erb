@@ -1,0 +1,44 @@
+
+<section class="property-items">
+
+  <div class="narrative">
+    <h2>Ofertele noastre</h2>
+    <p>Vezi ultimele proprietati listate si facilitatile acestora</p>
+  </div>
+
+  <div class="property-items-container clearfix">
+    <% @offers.each do |offer| %>
+        <div class="span6 ">
+          <article class="property-item clearfix">
+            <h4><a href="#" title="15421 Southwest 39th Terrace"><%= offer.tip_operatiune %> <%= offer.tip_oferta %> <%= offer.nr_camere %> <%= camere(offer.nr_camere) %></a></h4>
+
+            <figure>
+              <a href="#" title="15421 Southwest 39th Terrace">
+                <%= link_to image_tag(offer.offer_images.first.image_url(:listing)) %>
+                <!--<img  src="images/temp-images/property1.jpg"  alt="15421 Southwest 39th Terrace" title="15421 Southwest 39th Terrace">-->
+              </a>
+              <% if offer.exclusiva %>
+                <figcaption>OFERTA EXCLUSIVA</figcaption>
+              <% end %>
+            </figure>
+
+            <div class="detail">
+              <h5 class="price"><%= pret(offer.pret_vanzare, offer.pret_inchiriere) %><small> <%= pret_per(offer.moneda, offer.pret_per) %></small></h5>
+              <p><%= offer.tip_oferta %> de <%= offer.nr_camere %> <%= camere(offer.nr_camere).downcase %> de <%= operatiune(offer.tip_operatiune) %> in zona <%= offer.zona %>, <%= offer.cartier %>, <%= offer.localitate %> </p>
+              <a class="more-details" href="#">Detalii <i class="icon-caret-right"></i></a>
+            </div>
+
+            <div class="property-meta">
+              <span><i class="icon-area"></i><%= offer.suprafata_utila_mp %> mp suprafata utila</span><span><i class="icon-bed"></i><%= offer.dormitoare %> &nbsp;<%= dormitoare(offer.dormitoare) %></span><span><i class="icon-bath"></i><%= offer.nr_bai %>&nbsp;<%= bai(offer.nr_bai) %></span><span></span>
+            </div>
+          </article>
+        </div><!-- End .span6 -->
+    <% end %>
+  </div><!-- End .property-items-container -->
+
+  <div class="pagination">
+    <a href="#" class="real-btn current">1</a> <a href="#" class="real-btn">2</a>
+  </div>
+
+
+</section><!-- End .property-items -->
