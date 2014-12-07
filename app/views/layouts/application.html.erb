@@ -15,7 +15,10 @@
 
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "pages/" + params[:controller] %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "pages/" + params[:controller] %>
+
   <%= csrf_meta_tags %>
 
 
