@@ -50,6 +50,7 @@ class Offer < ActiveRecord::Base
   has_many :offer_images
   accepts_nested_attributes_for :offer_images, allow_destroy: true
 
+  scope :all_ordered_and_active, where("active IS true AND status LIKE 'Activ'").order(:created_at)
 
   def is_inactive?
     return true if !active
