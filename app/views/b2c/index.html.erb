@@ -135,27 +135,7 @@
   </div>
 </section><!-- End .advance-search -->
 
-
-<section class="property-items">
-
-  <div class="narrative">
-    <h2>Ofertele noastre</h2>
-    <p>Vezi ultimele proprietati listate si facilitatile acestora</p>
-  </div>
-
-  <div class="property-items-container clearfix">
-    <% @offers.each do |offer| %>
-      <%= render "offer_listing", offer: offer %>
-    <% end %>
-  </div><!-- End .property-items-container -->
-
-  <div class="pagination">
-    <a href="#" class="real-btn current">1</a> <a href="#" class="real-btn">2</a>
-  </div>
-
-
-</section><!-- End .property-items -->
-
+<%= render "index_offers" %>
 
 </div><!-- End .main -->
 </div><!-- End span12 -->

@@ -10,8 +10,8 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require custom
-//= require dataTables/jquery.dataTables
-//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require flexslider/jquery.flexslider.js
+//= require elastislide/jquery.easing.1.3.js
+//= require elastislide/jquery.elastislide.js
+//= require swipebox/jquery.swipebox.min.js
+//= require prettyphoto/jquery.prettyPhoto.js

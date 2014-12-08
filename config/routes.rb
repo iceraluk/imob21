@@ -6,6 +6,7 @@ Imob21::Application.routes.draw do
   resources :clients
   resources :owners
   root :to => 'b2c#index'
+  match "oferta/:id" => 'b2c#oferta', :as => "b2c_offer", via: :get
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

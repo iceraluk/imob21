@@ -1,0 +1,77 @@
+<p><%= offer.tip_oferta %> de <%= offer.nr_camere %> <%= camere(offer.nr_camere).downcase %> de <%= offer.tip_operatiune.downcase %> in zona <%= offer.zona %>, <%= offer.cartier %>, <%= offer.localitate %>. Pretul este de <%= pret(offer.pret_vanzare, offer.pret_inchiriere) %> <%= pret_per(offer.moneda, offer.pret_per) %> <%= 'negociabil' if offer.negociabil %>. Disponibilitate <%= offer.disponibilitate %></p>
+<h3>Caracteristici</h3>
+<table style="width: 100%">
+<tr>
+  <td><b>Tip Proprietate</b></td>
+  <td><%= offer.tip_oferta %></td>
+  <td><b>Nr Camere</b></td>
+  <td><%= offer.nr_camere %></td>
+</tr>
+<tr>
+  <td><b>Tip Operatiune</b></td>
+  <td><%= offer.tip_operatiune %></td>
+  <td><b>Nr. Bai</b></td>
+  <td><%= offer.nr_bai %></td>
+<tr>
+  <td><b>Anul constructiei</b></td>
+  <td><%= offer.anul_constructiei %></td>
+  <td><b>Nr. Balcoane</b></td>
+  <td><%= offer.nr_balcoane %></td>
+</tr>
+<tr>
+  <td><b>Pret <%= offer.tip_operatiune.downcase %></b></td>
+  <td><%= pret(offer.pret_vanzare, offer.pret_inchiriere) %> <%= pret_per(offer.moneda, offer.pret_per) %></td>
+  <td><b>Etaj</b></td>
+  <td><%= offer.etaj %></td>
+</tr>
+<tr>
+  <td><b>Suprafata utila mp</b></td>
+  <td><%= offer.suprafata_utila_mp %> </td>
+  <td><b>Nr etaje</b></td>
+  <td><%= offer.nr_etaje %> </td>
+<tr>
+  <td><b>Confort</b></td>
+  <td><%= offer.confort %></td>
+  <td><b>Orientare</b></td>
+  <td><%= offer.orientare %></td>
+</tr>
+<tr>
+  <td><b>Compartimentare</b></td>
+  <td><%= offer.compartimentare %></td>
+  <td><b>Parcare</b></td>
+  <td><%= offer.parcare %></td>
+</tr>
+<tr>
+  <td><b>Structura imobil</b></td>
+  <td><%= offer.structura %></td>
+  <td><b>Incalzire</b></td>
+  <td><%= offer.incalzire %></td>
+</tr>
+</table>
+
+<h3>Dotari</h3>
+<table style="width: 100%">
+  <tr>
+    <td><b>Conditii</b></td>
+    <td><%= offer.conditii %></td>
+  </tr>
+  <% if offer.mansarda_imobil %>
+  <tr>
+    <td><b>Mansarda</b></td>
+    <td> Da </td>
+  <tr>
+  <% end %>
+  <% if offer.demisol %>
+    <td><b>Demisol</b></td>
+    <td>Da</td>
+  </tr>
+  <% end %>
+  <tr>
+    <td><b>Acoperis</b></td>
+    <td><%= offer.acoperis %></td>
+  </tr>
+  <tr>
+    <td><b>Nivele</b></td>
+    <td><%= offer.suprafata_utila_mp %> </td>
+  <tr>
+</table>

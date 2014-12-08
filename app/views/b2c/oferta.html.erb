@@ -1,0 +1,38 @@
+
+<div class="inner-wrapper" style="width: 828px; float: left;">
+  <article class="format-gallery">
+    <header>
+      <h3 class="post-title"><%= @offer.tip_operatiune %> <%= @offer.tip_oferta %> <%= @offer.nr_camere %> <%= camere(@offer.nr_camere) %></h3>
+
+      <div class="post-meta gallery-meta thumb-exist">
+        <span> Postat pe data de <span class="date">  <%= @offer.created_at.strftime("%d/%m/%Y") %></span></span>
+      </div>
+    </header>
+    <div class="listing-slider">
+      <span class="format-icon gallery"></span>
+
+      <div class="flex-viewport" style="overflow: hidden; position: relative;">
+        <ul class="slides">
+          <% @offer.offer_images.each do |offer_image| %>
+          <li class="<%= 'clone' if offer_image.position == 1 %>">
+            <a href="<%= offer_image.image_url(:post) %>" title="" class="swipebox">
+              <%= image_tag offer_image.image_url(:post) %>
+            </a>
+          </li>
+          <% end %>
+
+        </ul>
+      </div>
+
+      <ul class="flex-direction-nav">
+        <li><a class="flex-prev" href="#">Previous</a></li>
+        <li><a class="flex-next" href="#">Next</a></li>
+      </ul>
+    </div>
+
+    <%= render "detalii_oferta", offer: @offer %>
+</article>
+
+</div>
+
+<%= render 'oferta_sidebar' %>
