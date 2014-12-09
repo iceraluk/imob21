@@ -1,6 +1,6 @@
-<fieldset>
-  <%= image_tag(f.object.image_url(:listing)) if f.object.image? %>
+<fieldset style ="padding: 20px 20px 20px 200px; border: 1px solid lightgray; margin: 20px">
+  <%= image_tag(f.object.image_url(:listing), :style => "width: 200px") if f.object.image? %>
   <%= f.file_field :image  %>
   <%= f.hidden_field :_destroy %>
-  <%= link_to "Sterge Imagine", '#', class: "remove_fields" %>
+  <%= link_to "Sterge Imagine", '#', class: "remove_fields btn-grey" %>
 </fieldset>
