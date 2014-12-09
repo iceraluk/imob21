@@ -35,8 +35,9 @@
     <% end %>
   </div><!-- End .property-items-container -->
 
-  <div class="pagination">
-    <a href="#" class="real-btn current">1</a> <a href="#" class="real-btn">2</a>
+  <div class="mypagination">
+    <%= will_paginate @offers, :container => false %>
+    <!--<a href="#" class="real-btn current">1</a> <a href="#" class="real-btn">2</a>-->
   </div>
 
 

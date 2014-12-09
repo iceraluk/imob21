@@ -63,3 +63,56 @@ a:hover{
 }
 }
 }
+
+.mypagination {
+  background: white;
+  cursor: default;
+  text-align: center
+  /* self-clearing method: */ }
+.mypagination a, .mypagination span, .mypagination em {
+  padding: 7px 13px;
+  margin: 0 1px 5px;
+}
+.mypagination {
+  .disabled {
+    color: #999999;
+    border: 1px solid #dddddd;
+  }
+  .current, a:hover, a:focus {
+    font-style: normal;
+    background-color: #e3712c;
+    color: white;
+  }
+  a {
+    text-decoration: none;
+    background-color: #dedede;
+    color: #8b9293;
+  }
+  .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center;
+  }
+  .page_info b {
+    color: #000033;
+    background: #6aa6ed;
+    padding: 0.1em 0.25em;
+  }
+  .previous_page, .next_page {
+    display: none;
+  }
+}
+  .mypagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .mypagination {
+    height: 1%; }
+  *:first-child + html .mypagination {
+    overflow: hidden; }
+

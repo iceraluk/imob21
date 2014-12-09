@@ -57,4 +57,20 @@ class Offer < ActiveRecord::Base
     return true if active && status != 'Activ'
     return false
   end
+
+  def self.zone
+    all.uniq{|o| o.zona}.map{|o| o.zona}
+  end
+
+  def self.cartiere
+    all.uniq{|o| o.cartier}.map{|o| o.cartier}
+  end
+
+  def self.tipuri_oferta
+    ['Apartament','Garsioniera','Casa', 'Spatiu Comercial', "Birour", "Teren extravilan", "Teren Intravilan"]
+  end
+
+  def self.tipuri_operatiune
+    all.uniq{|o| o.tip_operatiune}.map{|o| o.tip_operatiune}
+  end
 end
