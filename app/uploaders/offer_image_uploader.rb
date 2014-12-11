@@ -8,8 +8,13 @@ class OfferImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
+  include CarrierWaveDirect::Uploader
+
+  # Set the mimetype of the upload incase it is incorrect.
+  include CarrierWave::MimeTypes
+  process :set_content_type
 
   process :convert => 'png'
 

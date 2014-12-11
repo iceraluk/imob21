@@ -26,6 +26,8 @@ end
 
 gem 'jquery-rails'
 
+gem "jquery-fileupload-rails", github: 'cipacda/jquery-fileupload-rails' # Pull in the latest version
+
 # Postgresql
 gem 'pg', '~> 0.17.1'
 
@@ -44,6 +46,9 @@ gem 'carrierwave', '~>0.9.0'
 
 # Pagination
 gem 'will_paginate', '~> 3.0.6'
+
+# To store keys securely
+gem 'figaro', "~> 0.7.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

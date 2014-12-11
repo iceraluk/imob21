@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/cipacda/jquery-fileupload-rails.git
+  revision: 2dc1a7270f6ebf89a34981eea926dffb8d213363
+  specs:
+    jquery-fileupload-rails (0.4.3)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -55,6 +63,9 @@ GEM
       warden (~> 1.2.1)
     erubis (2.7.0)
     execjs (2.2.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     hike (1.2.3)
     i18n (0.6.11)
     journey (1.0.4)
@@ -133,7 +144,9 @@ DEPENDENCIES
   carrierwave (~> 0.9.0)
   coffee-rails (~> 3.2.1)
   devise (~> 2.2.8)
+  figaro (~> 0.7.0)
   jquery-datatables-rails (~> 3.0.0)
+  jquery-fileupload-rails!
   jquery-rails
   mini_magick (~> 3.4)
   pg (~> 0.17.1)
