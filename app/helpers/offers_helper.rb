@@ -7,4 +7,13 @@ module OffersHelper
     end
     link_to(name, '#', class: "add_fields real-btn btn", style: "margin-left: 200px", data: {id: id, fields: fields.gsub("\n", "")})
   end
+
+  def main_image(offer_images, offer_image)
+    if offer_image.position
+      return "main" if offer_image.position == 0
+    end
+    return "main" if offer_image.id == offer_images.first.id
+    return ""
+  end
+
 end

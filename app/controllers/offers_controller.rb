@@ -12,11 +12,11 @@ class OffersController < ApplicationController
   end
 
   # GET /offers/new
-  # GET /offers/new.jsonundefined b
+  # GET /offers/new.json
   def new
     @offer = Offer.new
+    @offer.create_new_image_token
     @offer.offer_images.build
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @offer }
@@ -26,6 +26,8 @@ class OffersController < ApplicationController
   # GET /offers/1/edit
   def edit
     @offer = Offer.find(params[:id])
+    @offer.create_new_image_token
+    @offer.offer_images.build if !@offer.offer_images.any?
   end
 
   # POST /offers
