@@ -46,7 +46,7 @@ class OfferImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    "/assets/" + [version_name, "default_card.png"].compact.join('_')
+    "/assets/images/" + [version_name, "default_card.png"].compact.join('_')
   end
 
   def will_include_content_type
@@ -56,6 +56,13 @@ class OfferImageUploader < CarrierWave::Uploader::Base
   default_content_type  'image/jpeg'
 
 
+  def full_filename(for_file)
+    if model.image_token
+      [version_name, model.image_token].compact.join('_') +  File.extname(for_file)
+    else
+      [version_name, File.basename(for_file, '.*')].compact.join('_') + File.extname(for_file)
+    end
+  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   # For Rails 3.1+ asset pipeline compatibility:

@@ -15,8 +15,8 @@ class OffersController < ApplicationController
   # GET /offers/new.jsonundefined b
   def new
     @offer = Offer.new
+    @offer.create_new_image_token
     @offer.offer_images.build
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @offer }
