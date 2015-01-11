@@ -26,6 +26,8 @@ class OffersController < ApplicationController
   # GET /offers/1/edit
   def edit
     @offer = Offer.find(params[:id])
+    @offer.create_new_image_token
+    @offer.offer_images.build if !@offer.offer_images.any?
   end
 
   # POST /offers
