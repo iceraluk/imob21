@@ -1,7 +1,11 @@
+require 'sidekiq/web'
+
 Imob21::Application.routes.draw do
 
   devise_for :admins
-
+  authenticate :admin do
+    mount Sidekiq::Web, at: '/sidekiq'
+  end
   resources :offers
   resources :clients
   resources :owners

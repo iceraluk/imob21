@@ -46,6 +46,8 @@ class Offer < ActiveRecord::Base
                   :exclusiva,
                   :offer_images_attributes
 
+  attr_accessor :new_image_token
+
   belongs_to :owner
   has_many :offer_images
   accepts_nested_attributes_for :offer_images, allow_destroy: true
@@ -73,4 +75,13 @@ class Offer < ActiveRecord::Base
   def self.tipuri_operatiune
     all.uniq{|o| o.tip_operatiune}.map{|o| o.tip_operatiune}
   end
+
+  def create_new_image_token
+    self.new_image_token = self.secure_token
+  end
+
+  def secure_token
+    SecureRandom.uuid
+  end
+
 end

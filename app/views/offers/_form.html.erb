@@ -1,3 +1,6 @@
+
+<%= render partial: "s3_upload_form" %>
+
 <%= form_for(@offer, :html => {:multipart => true, :class => "form-horizontal"} ) do |f| %>
     <h4>Detalii generale</h4>
 
@@ -26,11 +29,9 @@
       <%= f.check_box :exclusiva %>
     </div>
 
-    <%= f.fields_for :offer_images do |builder| %>
-        <%= render "offer_image_fields", f: builder %>
-    <% end %>
-    <%= link_to_add_fields "Adauga Imagine" ,f , :offer_images %>
 
+    <%= render partial: "offer_images", locals: { f: f } if @offer %>
+<div class="clear" style="height:500px"></div>
     <h4>Detalii Pret</h4>
 
     <div class="input-group">
