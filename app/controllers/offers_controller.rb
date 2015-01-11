@@ -12,7 +12,7 @@ class OffersController < ApplicationController
   end
 
   # GET /offers/new
-  # GET /offers/new.jsonundefined b
+  # GET /offers/new.json
   def new
     @offer = Offer.new
     @offer.create_new_image_token
