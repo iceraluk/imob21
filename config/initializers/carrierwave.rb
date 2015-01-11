@@ -1,6 +1,5 @@
 # Carrierwave Amazon AWS S3 configuration
 CarrierWave.configure do |config|
-  config.validate_unique_filename = false
   config.storage = :fog
   config.fog_credentials = {
       :provider               => 'AWS',

@@ -1,4 +1,4 @@
-module EventCardsHelper
+module OfferImagesHelper
   def s3_uploader_form(options = {}, &block)
     uploader = S3Uploader.new(options)
     form_tag(uploader.url, uploader.form_options) do

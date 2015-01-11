@@ -24,7 +24,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.1.2'
+gem 'jquery-ui-rails', '~> 5.0.3'
 
 gem "jquery-fileupload-rails", github: 'cipacda/jquery-fileupload-rails' # Pull in the latest version
 
@@ -42,13 +43,25 @@ gem 'devise', '~> 2.2.8'
 gem "mini_magick", '~> 3.4'
 
 # Carrierwave
-gem 'carrierwave', '~>0.9.0'
+gem 'carrierwave', "~> 0.10.0"
+
+# Carrierwave direct
+gem 'carrierwave_direct', "~> 0.0.14"
 
 # Pagination
 gem 'will_paginate', '~> 3.0.6'
 
 # To store keys securely
 gem 'figaro', "~> 0.7.0"
+
+# For image upload
+gem "fog", "~> 1.26.0"
+
+# Sidekiq
+gem "sidekiq", '~> 3.3.0'
+
+# Sinatra(for sidekiq)
+gem 'sinatra', "~> 1.4.5"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

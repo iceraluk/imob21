@@ -1,0 +1,21 @@
+<div style="display:none">
+  <p class="explanation" style="margin:0; padding:0;">
+      Your ﬁle can be a jpg, jpeg, gif or png. You
+      can drag and drop picture to re-arrange the order.
+    </p>
+    <div class="clear"></div>
+    <!-- Load Feather code -->
+    <script type="text/javascript" src="http://feather.aviary.com/js/feather.js"></script>
+    <%= s3_uploader_form post: offers_url, as: "offer_images[image_url]" do %>
+        <label class="filebutton">
+        <span><%= file_field_tag :file, multiple: true, style: 'width:220px' %></span></label>
+      <%= label_tag nil, nil, class: "s3-upload-errors" %>
+    <% end %>
+
+    <script id="template-upload" type="text/x-tmpl">
+      <div class="upload">
+        {%=o.name%}
+        <div class="progress"><div class="bar" style="width: 0%"></div></div>
+      </div>
+    </script>
+</div>

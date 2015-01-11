@@ -13,11 +13,16 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require offers
-//= require ../image-upload/offer_images
-//= require ../image-upload/offer_form
-//= require ../image-upload/feather.js
-//= require ../image-upload/image-editor
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require ../image-upload/unorm
 //= require ../image-upload/unormdata
+//= require ../image-upload/offer_images
+//= require ../image-upload/offer_form
+//= require ../image-upload/feather.js
+//= require ../image-upload/image-editor
+
+
+function openFileOption(){
+    $('#file').click();
+}
