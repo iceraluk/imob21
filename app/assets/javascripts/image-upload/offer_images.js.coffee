@@ -37,7 +37,7 @@ jQuery ->
       # Create a new row if there is not an empty one available
       unless /\${filename}/.test($(".offer-image-key").last().val())
         new ElementCloner($(".thumbnail").last(),
-                          $(".thumbnail").length)
+          $(".thumbnail").length)
         # remove the duplicated image tag
         $(".thumbnail").last().children("img").remove()
 
@@ -70,7 +70,7 @@ jQuery ->
 
       #Remove hidden if previous element was deleted and make checkbox true
       cloned_element.removeClass('hidden')
-      cloned_element.find(':checkbox').attr('checked', false)
+      cloned_element.find(':checkbox').attr('checked', false);
 
       existing_element.after(cloned_element)
       cloned_element.children("input").each (index, element) =>
@@ -83,10 +83,10 @@ jQuery ->
       orginal_row_number = parseInt(row[0])
 
       element.attr("name", element_name.replace(orginal_row_number,
-                                                @new_row_number))
+        @new_row_number))
 
       element.attr("id", element_name.replace(orginal_row_number,
-                                              @new_row_number))
+        @new_row_number))
 
   class ImageValidator
     constructor: (file) ->
@@ -99,11 +99,11 @@ jQuery ->
       reader.onload = @validImageSize
       reader.readAsDataURL(file)
       return @
-    
+
     validImageSize: (theFile) =>
       image = new Image();
       image.onload = @checkSize
       image.src = theFile.target.result;
-      
+
     checkSize: (image) =>
       @valid = false if image.srcElement.width < @minWidth || image.srcElement.height < @minHeight
