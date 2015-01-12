@@ -65,6 +65,9 @@ gem "sidekiq", '~> 3.3.0'
 # Sinatra(for sidekiq)
 gem 'sinatra', "~> 1.4.5"
 
+# Newrelic
+gem 'newrelic_rpm'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
