@@ -37,7 +37,7 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.save(params[:offer])
-        format.html { redirect_to offers_path, notice: 'Oferta a fost creata cu success.' }
+        format.html { redirect_to edit_offer_path(@offer), notice: 'Oferta a fost creata cu success.' }
         format.json { head :no_content }
       else
         format.html { render action: "new" }
@@ -53,7 +53,7 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.update_attributes(params[:offer])
-        format.html { redirect_to offers_path, notice: 'Oferta a fost updatata cu success.' }
+        format.html { redirect_to edit_offer_path(@offer), notice: 'Oferta a fost updatata cu success.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

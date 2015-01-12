@@ -16,4 +16,12 @@ module OffersHelper
     return ""
   end
 
+  def imaginea_principala_listare(offer)
+    return offer.offer_images.order('position ASC').first.image_url(:listing) if offer.offer_images.order('position ASC').first && !offer.offer_images.order('position ASC').first.image_url.nil?
+  end
+
+  def imaginea_principala_post(offer)
+    return offer.offer_images.order('position ASC').first.image_url(:post) if offer.offer_images.order('position ASC').first && !offer.offer_images.order('position ASC').first.image_url.nil?
+  end
+
 end

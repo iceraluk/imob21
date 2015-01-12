@@ -13,8 +13,8 @@
 
       <div class="flex-viewport" style="overflow: hidden; position: relative;">
         <ul class="slides">
-          <% @offer.offer_images.each do |offer_image| %>
-          <li class="<%= 'clone' if offer_image.position == 1 %>">
+          <% @offer.offer_images.order('position ASC').each do |offer_image| %>
+          <li class="<%= 'clone' if offer_image.position == 0 %>">
             <a href="<%= offer_image.image_url(:post) %>" title="" class="swipebox">
               <%= image_tag offer_image.image_url(:post) %>
             </a>

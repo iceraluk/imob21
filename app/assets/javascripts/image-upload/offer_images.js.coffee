@@ -70,7 +70,7 @@ jQuery ->
 
       #Remove hidden if previous element was deleted and make checkbox true
       cloned_element.removeClass('hidden')
-      cloned_element.find(':checkbox').attr('checked', false);
+      cloned_element.find(':checkbox').attr('checked', false)
 
       existing_element.after(cloned_element)
       cloned_element.children("input").each (index, element) =>

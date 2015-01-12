@@ -14,7 +14,7 @@
 
             <figure>
               <% if offer.offer_images.any? %>
-                <%= link_to image_tag(offer.offer_images.first.image_url(:listing)), b2c_offer_path(offer) %>
+                <%= link_to image_tag(imaginea_principala_listare(offer)), b2c_offer_path(offer) %>
               <% end %>
               <% if offer.exclusiva %>
                 <figcaption>OFERTA EXCLUSIVA</figcaption>
