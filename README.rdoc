@@ -68,5 +68,5 @@ Run sidekiq
 #### Deploying
 
 ````
-  $ git push heroku development:master
+  $ git push heroku master
 ````
