@@ -54,6 +54,8 @@ class Offer < ActiveRecord::Base
 
   scope :all_ordered_and_active, where("active IS true AND status LIKE 'Activ'").order(:created_at)
 
+  ZONE = ['Ultracentral', 'Nord', 'Central', 'Vest', 'Exterior-Vest', 'Exterior-Est', 'Exterior-Nord', 'Exterior-Sud']
+  CARTIERE = ['Cantacuzino', 'Cina', 'Republicii', 'Aurora', 'Mihai Bravu', 'Bariera-Obor', 'Bariera-Bucuresti', 'Independentei', 'Cioceanu', 'Bereasca', 'Albert', 'Malu Rosu']
   def is_inactive?
     return true if !active
     return true if active && status != 'Activ'
