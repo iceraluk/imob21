@@ -24,6 +24,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'pry'
+end
+
 gem 'jquery-rails', '~> 3.1.2'
 gem 'jquery-ui-rails', '~> 5.0.3'
 
@@ -67,6 +71,9 @@ gem 'sinatra', "~> 1.4.5"
 
 # Newrelic
 gem 'newrelic_rpm'
+
+# For geolocation
+gem 'geocoder', '~> 1.2.6'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

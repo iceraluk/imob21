@@ -1,30 +1,30 @@
 
 <!--<div class="inner-wrapper" style="width: 826px; float: left;">-->
-  <!--<article class="format-gallery">-->
-    <!--<header>-->
-      <!--<h3 class="post-title"><%#= @offer.tip_operatiune %> <%#= @offer.tip_oferta %> <%#= @offer.nr_camere %> <%#= camere(@offer.nr_camere) %></h3>-->
+<!--<article class="format-gallery">-->
+<!--<header>-->
+<!--<h3 class="post-title"><%#= @offer.tip_operatiune %> <%#= @offer.tip_oferta %> <%#= @offer.nr_camere %> <%#= camere(@offer.nr_camere) %></h3>-->
 
-      <!--<div class="post-meta gallery-meta thumb-exist">-->
-        <!--<span> Postat pe data de <span class="date">  <%#= @offer.created_at.strftime("%d/%m/%Y") %></span></span>-->
-      <!--</div>-->
-    <!--</header>-->
-    <!--<div class="listing-slider">-->
-      <!--<span class="format-icon gallery"></span>-->
+<!--<div class="post-meta gallery-meta thumb-exist">-->
+<!--<span> Postat pe data de <span class="date">  <%#= @offer.created_at.strftime("%d/%m/%Y") %></span></span>-->
+<!--</div>-->
+<!--</header>-->
+<!--<div class="listing-slider">-->
+<!--<span class="format-icon gallery"></span>-->
 
-      <!--<div class="flex-viewport" style="overflow: hidden; position: relative;">-->
-        <!--<ul class="slides">-->
+<!--<div class="flex-viewport" style="overflow: hidden; position: relative;">-->
+<!--<ul class="slides">-->
 
 
-        <!--</ul>-->
-      <!--</div>-->
+<!--</ul>-->
+<!--</div>-->
 
-      <!--<ul class="flex-direction-nav">-->
-        <!--<li><a class="flex-prev" href="#">Previous</a></li>-->
-        <!--<li><a class="flex-next" href="#">Next</a></li>-->
-      <!--</ul>-->
-    <!--</div>-->
+<!--<ul class="flex-direction-nav">-->
+<!--<li><a class="flex-prev" href="#">Previous</a></li>-->
+<!--<li><a class="flex-next" href="#">Next</a></li>-->
+<!--</ul>-->
+<!--</div>-->
 
-    <!--<%#= render "detalii_oferta", offer: @offer %>-->
+<!--<%#= render "detalii_oferta", offer: @offer %>-->
 <!--</article>-->
 
 <!--</div>-->
@@ -46,11 +46,11 @@
 
               <ul class="slides">
                 <% @offer.offer_images.order('position ASC').each do |offer_image| %>
-                <li data-thumb="<%= offer_image.image_url(:listing) %>">
-                <a href="<%= offer_image.image_url(:listing) %>" title="" class="swipebox">
-                <%= image_tag offer_image.image_url(:listing), alt:"image#{offer_image.position.to_i + 1}" %>
-                </a>
-                </li>
+                    <li data-thumb="<%= offer_image.image_url(:listing) %>">
+                      <a href="<%= offer_image.image_url(:listing) %>" title="" class="swipebox">
+                        <%= image_tag offer_image.image_url(:listing), alt:"image#{offer_image.position.to_i + 1}" %>
+                      </a>
+                    </li>
                 <% end %>
 
               </ul>
@@ -62,106 +62,146 @@
           <article class="property-item clearfix">
 
             <div class="wrap clearfix">
-              <h4 class="title">700 Front Street, Key West, FL</h4>
+              <h4 class="title"><%= @offer.zona %>, <%= @offer.cartier %>, <%= @offer.localitate %>, Prahova</h4>
               <h5 class="price">
                                     <span class="status-label">
-                                        On Sale
+                                       <%= @offer.tip_operatiune %>
                                     </span>
                                     <span>
-                                        $850,000 <small> - Single Family Home</small>
+                                        <%= pret(@offer.pret_vanzare, @offer.pret_inchiriere) %><small> <%= pret_per(@offer.moneda, @offer.pret_per) %></small>
                                     </span>
               </h5>
             </div>
 
             <div class="property-meta clearfix">
-              <span><i class="icon-area"></i>3800 sq ft&nbsp;</span><span><i class="icon-bed"></i>4&nbsp;Bedrooms</span><span><i class="icon-bath"></i>3&nbsp;Bathrooms</span><span><i class="icon-garage"></i>2&nbsp;Garages</span>
+              <span><i class="icon-area"></i><%= @offer.suprafata_utila_mp %> mp suprafata utila</span><span><i class="icon-bed"></i><%= @offer.dormitoare %> &nbsp;<%= dormitoare(@offer.dormitoare) %></span><span><i class="icon-bath"></i><%= @offer.nr_bai %>&nbsp;<%= bai(@offer.nr_bai) %></span>
               <!-- Print Icon -->
               <span class="printer-icon"><a href="javascript:window.print()">Print this page</a></span>
             </div>
 
             <div class="content clearfix">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-              <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+              <p><%= @offer.tip_oferta %> de <%= @offer.nr_camere %> <%= camere(@offer.nr_camere).downcase %> de <%= @offer.tip_operatiune.downcase %> in zona <%= @offer.zona %>, <%= @offer.cartier %>, <%= @offer.localitate %>, Prahova. Pretul este de <%= pret(@offer.pret_vanzare, @offer.pret_inchiriere) %> <%= pret_per(@offer.moneda, @offer.pret_per) %> <%= 'negociabil' if @offer.negociabil %>. Disponibilitate <%= @offer.disponibilitate %></p>
             </div>
 
             <div class="features">
-              <h4 class="title">Features</h4>
+              <h4 class="title">Caracteristici si Dotari</h4>
               <ul class="arrow-bullet-list clearfix">
-                <li><a href="#">2 Stories</a></li>
-                <li><a href="#">Central Heating</a></li>
-                <li><a href="#">Dual Sinks</a></li>
-                <li><a href="#">Electric Range</a></li>
-                <li><a href="#">Fire Place</a></li>
-                <li><a href="#">Laundry Room</a></li>
-                <li><a href="#">Lawn</a></li>
-                <li><a href="#">Marble Floors</a></li>
-                <li><a href="#">Swimming Pool</a></li>
+                <li><a href="#"><b>Tip Oferta</b> <%= @offer.tip_oferta %></a></li>
+                <li><a href="#"><b>Nr camere</b> <%= @offer.nr_camere %></a></li>
+                <li><a href="#"><b>Tip Operatiune</b> <%= @offer.tip_operatiune %></a></li>
+                <li><a href="#"> <b>Nr. Bai</b> <%= @offer.nr_bai %></a></li>
+
+                <li><a href="#"> <b>Anul constructiei</b> <%= @offer.anul_constructiei %></a></li>
+                <li><a href="#"> <b>Nr. Balcoane</b> <%= @offer.nr_balcoane %></a></li>
+
+
+                <li><a href="#"> <b>Pret <%= @offer.tip_operatiune.downcase %></b> <%= pret(@offer.pret_vanzare, @offer.pret_inchiriere) %> <%= pret_per(@offer.moneda, @offer.pret_per) %></a></li>
+                <li><a href="#"><b>Etaj</b> <%= @offer.etaj %></a></li>
+
+
+                <li><a href="#"> <b>Suprafata utila mp</b> <%= @offer.suprafata_utila_mp %></a></li>
+                <li><a href="#"> <b>Nr etaje</b> <%= @offer.nr_etaje %></a></li>
+
+                <li><a href="#"> <b>Confort</b> <%= @offer.confort %></a></li>
+                <li><a href="#"> <b>Orientare</b> <%= @offer.orientare %></a></li>
+
+
+                <li><a href="#"> <b>Compartimentare</b> <%= @offer.compartimentare %></a></li>
+                <li><a href="#"><b>Parcare</b> <%= @offer.parcare %></a></li>
+
+
+                <li><a href="#"><b>Structura imobil</b> <%= @offer.structura %></a></li>
+                <li><a href="#"><b>Incalzire</b> <%= @offer.incalzire %></a></li>
+
+
+
+                <li><a href="#"><b>Conditii</b> <%= @offer.conditii %></a></li>
+
+                <li><a href="#"> <% if @offer.mansarda_imobil %> <b>Mansarda</b>
+                      Da
+                  <% end %></a></li>
+                <li><a href="#"><% if @offer.demisol %>
+                      <b>Demisol</b>
+                      Da
+
+                  <% end %></a></li>
+
+                <li><a href="#"><b>Acoperis</b> <%= @offer.acoperis %></a></li>
+
+
+                <li><a href="#"><b>Nivele</b> <%= @offer.suprafata_utila_mp %></a></li>
+                <% if @offer.video %>
+                    <li><a href="<%= @offer.video %>"><b>Video</b> <%= @offer.video %></a></li>
+                <% end %>
+
+                <li><a href="#"><b>Disponibiliate</b> <%= @offer.disponibilitate %></a></li>
               </ul>
             </div>
 
           </article>
 
-          <div class="property-video">
-            <span class="video-label">Property Video</span>
-            <a href="http://vimeo.com/70301553" class="pretty-photo" title="Video">
-              <div class="play-btn"></div>
-              <img src="images/temp-images/property-video-image.jpg" alt="700 Front Street, Key West, FL">
-            </a>
-          </div>
+          <!--<div class="property-video">-->
+          <!--<span class="video-label">Property Video</span>-->
+          <!--<a href="http://vimeo.com/70301553" class="pretty-photo" title="Video">-->
+          <!--<div class="play-btn"></div>-->
+          <!--<img src="<%#= @offer.offer_images.order('position ASC').first.image_url(:listing) %>" alt="700 Front Street, Key West, FL">-->
+          <!--</a>-->
+          <!--</div>-->
 
           <div class="map-wrap clearfix">
-            <span class="map-label">Property Map</span>
+            <span class="map-label">Harta Proprietatii</span>
             <div id="property_map">
 
             </div>
 
-            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-            <script type="text/javascript">
-                // Google Map
-                function initialize()
-                {
-                    var geocoder  = new google.maps.Geocoder();
-                    var map;
-                    var latlng = new google.maps.LatLng(-37.817917, 144.965065);
-                    var infowindow = new google.maps.InfoWindow();
-                    var myOptions = {
-                        zoom: 17,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                    };
-
-                    map = new google.maps.Map(document.getElementById("property_map"), myOptions);
-
-                    geocoder.geocode( { 'location': latlng },
-                            function(results, status) {
-                                if (status == google.maps.GeocoderStatus.OK)
-                                {
-                                    map.setCenter(results[0].geometry.location);
-                                    var marker = new google.maps.Marker({
-                                        map: map,
-                                        position: results[0].geometry.location
-                                    });
-                                    //alert(results[0].formatted_address);
-                                    //infowindow.setContent(results[0].formatted_address);
-                                    //infowindow.open(map, marker);
-                                }
-                                else
-                                {
-                                    alert("Geocode was not successful for the following reason: " + status);
-                                }
-                            });
-
-                }
-
-                initialize();
-            </script>
-
-            <div class="share-networks clearfix">
-              <span class="share-label">Share this</span>
-              <span><a target="_blank" href="https://www.facebook.com"><i class="icon-facebook"></i>Facebook</a></span>
-              <span><a target="_blank" href="https://twitter.com"><i class="icon-twitter"></i>Twitter</a></span>
-              <span><a target="_blank" href="https://plus.google.com"><i class="icon-google-plus"></i>Google</a></span>
-            </div>
           </div>
+          <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+          <script type="text/javascript">
+              // Google Map
+              function initialize()
+              {
+                  var geocoder  = new google.maps.Geocoder();
+                  var map;
+                  var latlng = new google.maps.LatLng(<%= @offer.latitude %>, <%= @offer.longitude %>);
+                  var infowindow = new google.maps.InfoWindow();
+                  var myOptions = {
+                      zoom: 17,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                  };
+
+                  map = new google.maps.Map(document.getElementById("property_map"), myOptions);
+
+                  geocoder.geocode( { 'location': latlng },
+                          function(results, status) {
+                              if (status == google.maps.GeocoderStatus.OK)
+                              {
+                                  map.setCenter(results[0].geometry.location);
+                                  var marker = new google.maps.Marker({
+                                      map: map,
+                                      position: results[0].geometry.location
+                                  });
+                                  //alert(results[0].formatted_address);
+                                  //infowindow.setContent(results[0].formatted_address);
+                                  //infowindow.open(map, marker);
+                              }
+                              else
+                              {
+                                  alert("Geocode was not successful for the following reason: " + status);
+                              }
+                          });
+
+              }
+
+              initialize();
+          </script>
+
+          <!--<div class="share-networks clearfix">-->
+          <!--<span class="share-label">Share this</span>-->
+          <!--<span><a target="_blank" href="https://www.facebook.com"><i class="icon-facebook"></i>Facebook</a></span>-->
+          <!--<span><a target="_blank" href="https://twitter.com"><i class="icon-twitter"></i>Twitter</a></span>-->
+          <!--<span><a target="_blank" href="https://plus.google.com"><i class="icon-google-plus"></i>Google</a></span>-->
+          <!--</div>-->
+          <!--</div>-->
 
           <div class="agent-detail clearfix">
 
@@ -207,7 +247,6 @@
             </div>
           </div>
 
-
         </section>
 
       </div><!-- End Main Content -->
@@ -217,4 +256,7 @@
     <div class="span3 sidebar-wrap">
 
 
-<%= render 'oferta_sidebar' %>
+      <%= render 'oferta_sidebar' %>
+    </div>
+  </div>
+</div>

@@ -111,6 +111,9 @@ a:hover{
     height: 0;
     clear: both;
     visibility: hidden; }
+  .mypagination em {
+    margin: 0 !important;
+  }
   * html .mypagination {
     height: 1%; }
   *:first-child + html .mypagination {

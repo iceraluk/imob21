@@ -1,7 +1,7 @@
 
 <div class="menu-and-contact-wrap">
 
-  <h2  class="contact-number"><i class="icon-phone"></i>07500 59 49 46 <span class="outer-strip"></span></h2>
+  <h2  class="contact-number"><i class="icon-phone"></i>0734 79 09 32 <span class="outer-strip"></span></h2>
   <!-- Start Main Menu-->
   <nav class="main-menu">
     <div class="menu-main-menu-container">
@@ -9,24 +9,16 @@
         <li class="current-menu-item current_page_item"><%= link_to 'Acasa', root_path %></li>
         <li><a href="#">Inchirieri</a>
           <ul>
-            <li><a href="#">Apartamente</a></li>
-            <li><a href="#">Garsoniere</a></li>
-            <li><a href="#">Case</a></li>
-            <li><a href="#">Spatii Comerciale</a></li>
-            <li><a href="#">Birouri</a></li>
-            <li><a href="#">Terenuri Extravilane</a></li>
-            <li><a href="#">Terenuri Intravilane</a></li>
+            <% Offer::TIPURI_OFERTA.each do |tip_oferta| %>
+                <li><a href="<%= b2c_offer_listing_path("tip-operatiune" => "inchiriere", "tip-oferta" => "#{tip_oferta}") %>"><%= tip_oferta %></a></li>
+            <% end %>
           </ul>
         </li>
         <li><a href="#">Vanzari</a>
           <ul>
-            <li><a href="#">Apartamente</a></li>
-            <li><a href="#">Garsoniere</a></li>
-            <li><a href="#">Case</a></li>
-            <li><a href="#">Spatii Comerciale</a></li>
-            <li><a href="#">Birouri</a></li>
-            <li><a href="#">Terenuri Extravilane</a></li>
-            <li><a href="#">Terenuri Intravilane</a></li>
+            <% Offer::TIPURI_OFERTA.each do |tip_oferta| %>
+                <li><a href="<%= b2c_offer_listing_path("tip-operatiune" => "vanzare", "tip-oferta" => "#{tip_oferta}") %>"><%= tip_oferta %></a></li>
+            <% end %>
           </ul>
         </li>
         <li><a href="#">Despre noi</a></li>

@@ -1,0 +1,7 @@
+<% if @offers.any? %>
+
+    <%= render 'oferte_listare', offers: @offers %>
+
+<% else %>
+   <h4> Nu a fost gasita nicio oferta pentru cautarea dumneavoastra. </h4>
+<% end %>
