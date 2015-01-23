@@ -1,38 +1,220 @@
 
-<div class="inner-wrapper" style="width: 826px; float: left;">
-  <article class="format-gallery">
-    <header>
-      <h3 class="post-title"><%= @offer.tip_operatiune %> <%= @offer.tip_oferta %> <%= @offer.nr_camere %> <%= camere(@offer.nr_camere) %></h3>
+<!--<div class="inner-wrapper" style="width: 826px; float: left;">-->
+  <!--<article class="format-gallery">-->
+    <!--<header>-->
+      <!--<h3 class="post-title"><%#= @offer.tip_operatiune %> <%#= @offer.tip_oferta %> <%#= @offer.nr_camere %> <%#= camere(@offer.nr_camere) %></h3>-->
 
-      <div class="post-meta gallery-meta thumb-exist">
-        <span> Postat pe data de <span class="date">  <%= @offer.created_at.strftime("%d/%m/%Y") %></span></span>
-      </div>
-    </header>
-    <div class="listing-slider">
-      <span class="format-icon gallery"></span>
+      <!--<div class="post-meta gallery-meta thumb-exist">-->
+        <!--<span> Postat pe data de <span class="date">  <%#= @offer.created_at.strftime("%d/%m/%Y") %></span></span>-->
+      <!--</div>-->
+    <!--</header>-->
+    <!--<div class="listing-slider">-->
+      <!--<span class="format-icon gallery"></span>-->
 
-      <div class="flex-viewport" style="overflow: hidden; position: relative;">
-        <ul class="slides">
-          <% @offer.offer_images.order('position ASC').each do |offer_image| %>
-          <li class="<%= 'clone' if offer_image.position == 0 %>">
-            <a href="<%= offer_image.image_url(:post) %>" title="" class="swipebox">
-              <%= image_tag offer_image.image_url(:post) %>
+      <!--<div class="flex-viewport" style="overflow: hidden; position: relative;">-->
+        <!--<ul class="slides">-->
+
+
+        <!--</ul>-->
+      <!--</div>-->
+
+      <!--<ul class="flex-direction-nav">-->
+        <!--<li><a class="flex-prev" href="#">Previous</a></li>-->
+        <!--<li><a class="flex-next" href="#">Next</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+
+    <!--<%#= render "detalii_oferta", offer: @offer %>-->
+<!--</article>-->
+
+<!--</div>-->
+
+<div class="container contents lisitng-grid-layout">
+
+  <div class="row">
+
+    <div class="span9 main-wrap">
+
+      <!-- Main Content -->
+      <div class="main">
+
+        <section id="overview">
+
+          <div id="property-detail-flexslider" class="clearfix">
+            <div class="flexslider">
+
+
+              <ul class="slides">
+                <% @offer.offer_images.order('position ASC').each do |offer_image| %>
+                <li data-thumb="<%= offer_image.image_url(:listing) %>">
+                <a href="<%= offer_image.image_url(:listing) %>" title="" class="swipebox">
+                <%= image_tag offer_image.image_url(:listing), alt:"image#{offer_image.position.to_i + 1}" %>
+                </a>
+                </li>
+                <% end %>
+
+              </ul>
+
+
+            </div>
+          </div>
+
+          <article class="property-item clearfix">
+
+            <div class="wrap clearfix">
+              <h4 class="title">700 Front Street, Key West, FL</h4>
+              <h5 class="price">
+                                    <span class="status-label">
+                                        On Sale
+                                    </span>
+                                    <span>
+                                        $850,000 <small> - Single Family Home</small>
+                                    </span>
+              </h5>
+            </div>
+
+            <div class="property-meta clearfix">
+              <span><i class="icon-area"></i>3800 sq ft&nbsp;</span><span><i class="icon-bed"></i>4&nbsp;Bedrooms</span><span><i class="icon-bath"></i>3&nbsp;Bathrooms</span><span><i class="icon-garage"></i>2&nbsp;Garages</span>
+              <!-- Print Icon -->
+              <span class="printer-icon"><a href="javascript:window.print()">Print this page</a></span>
+            </div>
+
+            <div class="content clearfix">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+              <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+            </div>
+
+            <div class="features">
+              <h4 class="title">Features</h4>
+              <ul class="arrow-bullet-list clearfix">
+                <li><a href="#">2 Stories</a></li>
+                <li><a href="#">Central Heating</a></li>
+                <li><a href="#">Dual Sinks</a></li>
+                <li><a href="#">Electric Range</a></li>
+                <li><a href="#">Fire Place</a></li>
+                <li><a href="#">Laundry Room</a></li>
+                <li><a href="#">Lawn</a></li>
+                <li><a href="#">Marble Floors</a></li>
+                <li><a href="#">Swimming Pool</a></li>
+              </ul>
+            </div>
+
+          </article>
+
+          <div class="property-video">
+            <span class="video-label">Property Video</span>
+            <a href="http://vimeo.com/70301553" class="pretty-photo" title="Video">
+              <div class="play-btn"></div>
+              <img src="images/temp-images/property-video-image.jpg" alt="700 Front Street, Key West, FL">
             </a>
-          </li>
-          <% end %>
+          </div>
 
-        </ul>
-      </div>
+          <div class="map-wrap clearfix">
+            <span class="map-label">Property Map</span>
+            <div id="property_map">
 
-      <ul class="flex-direction-nav">
-        <li><a class="flex-prev" href="#">Previous</a></li>
-        <li><a class="flex-next" href="#">Next</a></li>
-      </ul>
-    </div>
+            </div>
 
-    <%= render "detalii_oferta", offer: @offer %>
-</article>
+            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+            <script type="text/javascript">
+                // Google Map
+                function initialize()
+                {
+                    var geocoder  = new google.maps.Geocoder();
+                    var map;
+                    var latlng = new google.maps.LatLng(-37.817917, 144.965065);
+                    var infowindow = new google.maps.InfoWindow();
+                    var myOptions = {
+                        zoom: 17,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
 
-</div>
+                    map = new google.maps.Map(document.getElementById("property_map"), myOptions);
+
+                    geocoder.geocode( { 'location': latlng },
+                            function(results, status) {
+                                if (status == google.maps.GeocoderStatus.OK)
+                                {
+                                    map.setCenter(results[0].geometry.location);
+                                    var marker = new google.maps.Marker({
+                                        map: map,
+                                        position: results[0].geometry.location
+                                    });
+                                    //alert(results[0].formatted_address);
+                                    //infowindow.setContent(results[0].formatted_address);
+                                    //infowindow.open(map, marker);
+                                }
+                                else
+                                {
+                                    alert("Geocode was not successful for the following reason: " + status);
+                                }
+                            });
+
+                }
+
+                initialize();
+            </script>
+
+            <div class="share-networks clearfix">
+              <span class="share-label">Share this</span>
+              <span><a target="_blank" href="https://www.facebook.com"><i class="icon-facebook"></i>Facebook</a></span>
+              <span><a target="_blank" href="https://twitter.com"><i class="icon-twitter"></i>Twitter</a></span>
+              <span><a target="_blank" href="https://plus.google.com"><i class="icon-google-plus"></i>Google</a></span>
+            </div>
+          </div>
+
+          <div class="agent-detail clearfix">
+
+            <div class="left-box">
+              <h3>Agent John Doe</h3>
+              <figure>
+                <a href="#">
+                  <img src="images/temp-images/agent-john.jpg"  alt="agent pic">
+                </a>
+              </figure>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl…</p>
+              <ul class="contacts-list">
+                <li class="office">Office : 041-456-7890</li>
+                <li class="mobile">Mobile : 0223-123-4567</li>
+                <li class="fax">Fax  : 041-789-1234</li>
+              </ul>
+            </div>
+
+            <div class="contact-form">
+
+              <h3>Contact</h3>
+
+              <form id="agent-contact-form" class="contact-form-small" method="post" action="agent_form_handler.php">
+
+                <input type="text" name="name" id="name" value="Name" class="required" title="* Please provide your name">
+
+                <input type="text" name="email" id="email" value="Email" class="email required" title="* Please provide valid email address">
+
+                <textarea name="message" id="comment" class="required" title="* Please provide your message">Message</textarea>
+
+                <input type="hidden" name="target" value="robot@psdtohtmlwp.com">
+                <input type="hidden" name="action" value="send_message_to_agent">
+                <input type="hidden" name="property_title" value="700 Front Street, Key West, FL">
+                <input type="hidden" name="property_permalink" value="http://www.960demo.com/realhomes-html/property.php">
+
+                <input type="submit" value="Submit" name="submit" class="real-btn">
+                <img src="images/ajax-loader.gif" id="contact-loader" alt="Loading...">
+
+              </form>
+
+              <div class="error-container"></div>
+              <div id="message-sent">&nbsp;</div>
+            </div>
+          </div>
+
+
+        </section>
+
+      </div><!-- End Main Content -->
+
+    </div> <!-- End span9 -->
+
+    <div class="span3 sidebar-wrap">
+
 
 <%= render 'oferta_sidebar' %>

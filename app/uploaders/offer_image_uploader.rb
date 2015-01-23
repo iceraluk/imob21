@@ -30,7 +30,7 @@ class OfferImageUploader < CarrierWave::Uploader::Base
   end
 
   version :listing do
-    process :resize_to_fill => [770, 382]
+    process :resize_to_fill => [770, 386]
   end
 
   def store_dir
