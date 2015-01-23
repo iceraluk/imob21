@@ -117,22 +117,14 @@
 
                 <li><a href="#"><b>Conditii</b> <%= @offer.conditii %></a></li>
 
-                <li><a href="#"> <% if @offer.mansarda_imobil %> <b>Mansarda</b>
-                      Da
-                  <% end %></a></li>
-                <li><a href="#"><% if @offer.demisol %>
-                      <b>Demisol</b>
-                      Da
-
-                  <% end %></a></li>
+                <% if @offer.mansarda_imobil %><li><a href="#"><b>Mansarda</b> Da</a></li><% end %>
+                <% if @offer.demisol %><li><a href="#"><b>Demisol</b> Da</a></li><% end %>
 
                 <li><a href="#"><b>Acoperis</b> <%= @offer.acoperis %></a></li>
 
 
                 <li><a href="#"><b>Nivele</b> <%= @offer.suprafata_utila_mp %></a></li>
-                <% if @offer.video %>
-                    <li><a href="<%= @offer.video %>"><b>Video</b> <%= @offer.video %></a></li>
-                <% end %>
+                <% if @offer.video %><li><a href="<%= @offer.video %>"><b>Video</b> <%= @offer.video %></a></li><% end %>
 
                 <li><a href="#"><b>Disponibiliate</b> <%= @offer.disponibilitate %></a></li>
               </ul>
@@ -212,10 +204,9 @@
                   <img src="images/temp-images/agent-john.jpg"  alt="agent pic">
                 </a>
               </figure>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl…</p>
               <ul class="contacts-list">
-                <li class="office">Office : 041-456-7890</li>
-                <li class="mobile">Mobile : 0223-123-4567</li>
+                <li class="office">Telefon : 041-456-7890</li>
+                <li class="mobile">Email : 0223-123-4567</li>
                 <li class="fax">Fax  : 041-789-1234</li>
               </ul>
             </div>
@@ -226,18 +217,18 @@
 
               <form id="agent-contact-form" class="contact-form-small" method="post" action="agent_form_handler.php">
 
-                <input type="text" name="name" id="name" value="Name" class="required" title="* Please provide your name">
+                <input type="text" name="name" id="name" value="Nume" class="required" title="* Va rugam sa va adaugati numele">
 
-                <input type="text" name="email" id="email" value="Email" class="email required" title="* Please provide valid email address">
+                <input type="text" name="email" id="email" value="Email" class="email required" title="* Va rugam sa adaugati o adresa de email sa stim cum sa va contactam">
 
-                <textarea name="message" id="comment" class="required" title="* Please provide your message">Message</textarea>
+                <textarea name="message" id="comment" class="required" title="* Va rugam sa scrieti un mesaj">Mesaj</textarea>
 
                 <input type="hidden" name="target" value="robot@psdtohtmlwp.com">
                 <input type="hidden" name="action" value="send_message_to_agent">
                 <input type="hidden" name="property_title" value="700 Front Street, Key West, FL">
                 <input type="hidden" name="property_permalink" value="http://www.960demo.com/realhomes-html/property.php">
 
-                <input type="submit" value="Submit" name="submit" class="real-btn">
+                <input type="submit" value="Trimite" name="submit" class="real-btn">
                 <img src="images/ajax-loader.gif" id="contact-loader" alt="Loading...">
 
               </form>

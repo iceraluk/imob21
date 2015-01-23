@@ -5,152 +5,84 @@
   <section class="widget advance-search">
     <h4 class="title search-heading">Cauta proprietate<i class="icon-search"></i></h4>
     <div class="as-form-wrap">
-      <form class="advance-search-form clearfix" action="#" method="get">
+
+        <%= form_tag b2c_offer_listing_path, :method => 'get', :class => "advance-search-form clearfix" do %>
+        <div class="option-bar">
+          <label>Zone</label>
+            <span class="selectwrap">
+                <select name="zone" id="select-location" class="search-select">
+                  <% Offer::ZONE.each do |zona| %>
+                      <option value="<%= zona.try(:downcase) %>"><%= zona.try(:capitalize) %></option>
+                  <% end %>
+                  <option value="oricare" selected="selected">Oricare</option>
+                </select>
+            </span>
+        </div>
 
         <div class="option-bar">
-          <label>Location</label>
-                        <span class="selectwrap">
-                                        <select name="location" id="select-location" class="search-select">
-                                          <option value="any" selected="selected">Any</option>
-                                          <option value="miami">Miami</option>
-                                          <option value="newyork">New York</option>
+          <label>Cartier</label>
+                                    <span class="selectwrap">
+                                        <select name="cartier" id="select-status" class="search-select">
+                                          <% Offer::CARTIERE.each do |cartier| %>
+                                              <option value="<%= cartier.try(:downcase) %>"><%= cartier.try(:capitalize) %></option>
+                                          <% end %>
+                                          <option value="oricare" selected="selected">Oricare</option>
                                         </select>
                                     </span>
         </div>
 
         <div class="option-bar">
-          <label>Status</label>
-                        <span class="selectwrap">
-                            <select name="status" id="select-status" class="search-select">
-                              <option value="on-rent">On Rent</option>
-                              <option value="on-sale">On Sale</option>
-                              <option value="any" selected="selected">Any</option>
-                            </select>
-                        </span>
-        </div>
-
-        <div class="option-bar">
-          <label>Property Type</label>
-                        <span class="selectwrap">
-                            <select name="type" id="select-property-type" class="search-select">
-                              <option value="condominium">Condominium</option>
-                              <option value="single-family-home">Single Family Home</option>
-                              <option value="villa">Villa</option>
-                              <option value="any" selected="selected">Any</option>
-                            </select>
-                        </span>
+          <label>Tip Operatiune</label>
+                                    <span class="selectwrap">
+                                        <select name="tip-operatiune" id="select-property-type" class="search-select">
+                                          <option value="vanzare">Vanzare</option>
+                                          <option value="cumparare">Inchiriere</option>
+                                          <option value="oricare" selected="selected">Oricare</option>
+                                        </select>
+                                    </span>
         </div>
 
         <div class="option-bar mini first">
-          <label>Bedrooms</label>
-                        <span class="selectwrap">
-                            <select name="bedrooms" id="select-bedrooms" class="search-select">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>
-                              <option value="9">9</option>
-                              <option value="10">10</option>
-                              <option value="any" selected="selected">Any</option>
-                            </select>
-                        </span>
+          <label>Tip Oferta</label>
+                                    <span class="selectwrap">
+                                        <select name="tip-oferta" id="select-bedrooms" class="search-select">
+                                          <% Offer::TIPURI_OFERTA.each do |tip_oferta| %>
+                                              <option value="<%= tip_oferta.try(:downcase) %>"><%= tip_oferta.try(:capitalize) %></option>
+                                          <% end %>
+                                          <option value="oricare" selected="selected">Oricare</option>
+                                        </select>
+                                    </span>
         </div>
 
         <div class="option-bar mini">
-          <label>Bathrooms</label>
-                        <span class="selectwrap">
-                            <select name="bathrooms" id="select-bathrooms" class="search-select">
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>
-                              <option value="9">9</option>
-                              <option value="10">10</option>
-                              <option value="any" selected="selected">Any</option>
-                            </select>
-                        </span>
+          <label>Numar camere</label>
+                                    <span class="selectwrap">
+                                        <select name="nr-camere" id="select-bathrooms" class="search-select">
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5+</option>
+                                          <option value="oricat" selected="selected">Oricat</option>
+                                        </select>
+                                    </span>
         </div>
 
         <div class="option-bar mini first">
-          <label>Min Price</label>
-                        <span class="selectwrap">
-                            <select name="min-price" id="select-min-price" class="search-select">
-                              <option value="50000">$50,000</option>
-                              <option value="100000">$100,000</option>
-                              <option value="200000">$200,000</option>
-                              <option value="300000">$300,000</option>
-                              <option value="400000">$400,000</option>
-                              <option value="500000">$500,000</option>
-                              <option value="600000">$600,000</option>
-                              <option value="700000">$700,000</option>
-                              <option value="800000">$800,000</option>
-                              <option value="900000">$900,000</option>
-                              <option value="1000000">$1,000,000</option>
-                              <option value="any" selected="selected">Any</option>
-                            </select>
-                        </span>
+          <label>Pret Minim(€)</label>
+                                    <span class="inputwrap">
+                                        <%= text_field_tag 'min-price', '', :class => "search-input" %>
+                                    </span>
         </div>
 
         <div class="option-bar mini">
-          <label>Max Price</label>
-                        <span class="selectwrap">
-                            <select name="max-price" id="select-max-price" class="search-select">
-                              <option value="100000">$100,000</option>
-                              <option value="200000">$200,000</option>
-                              <option value="300000">$300,000</option>
-                              <option value="400000">$400,000</option>
-                              <option value="500000">$500,000</option>
-                              <option value="600000">$600,000</option>
-                              <option value="700000">$700,000</option>
-                              <option value="800000">$800,000</option>
-                              <option value="900000">$900,000</option>
-                              <option value="1000000">$1,000,000</option>
-                              <option value="any" selected="selected">Any</option>
-                            </select>
-                        </span>
+          <label>Pret Maxim(€)</label>
+                                    <span class="inputwrap">
+                                        <%= text_field_tag 'max-price', '', :class => "search-input" %>
+                                    </span>
         </div>
 
-        <input type="submit" value="Search" class=" real-btn btn">
-      </form>
+            <%= submit_tag 'Cauta', :class => "real-btn btn" %>
+      <% end %>
     </div>
-  </section><section class="widget">
-  <h3 class="title">Property Types</h3>
-  <ul>
-    <li><a href="#">Condominium</a></li>
-    <li><a href="#">Single Family Home</a></li>
-    <li><a href="#">Villa</a></li>
-  </ul>
-</section>
-  <section class="widget"
-  ><h3 class="title">Featured Properties</h3>
-    <ul class="featured-properties">
-      <li>
-        <figure>
-          <a href="#">
-            <img  src="images/temp-images/featured-widget-image1.jpg"  alt="property 02">
-          </a>
-        </figure>
-        <h4><a href="#" title="401 Biscayne Boulevard, Miami">401 Biscayne Boulevard, Miami</a></h4>
-        <p>Nam liber tempor cum soluta nobis eleifend… <a href="#">Read More</a></p>
-        <span class="price">$3,250 Per Month</span>
-      </li>
-      <li>
-        <figure>
-          <a href="#">
-            <img src="images/temp-images/featured-widget-image1.jpg"  alt="property 08">
-          </a>
-        </figure>
-        <h4><a href="#" title="700 Front Street, Key West, FL">700 Front Street, Key West, FL</a></h4>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing… <a href="#">Read More</a></p>
-        <span class="price">$850,000 </span>
-      </li>
-    </ul>
-  </section>    </aside><!-- End Sidebar -->
+  </section>   </aside><!-- End Sidebar -->

@@ -66,18 +66,18 @@
       <div class="option-bar small second-last">
         <label>Pret Minim(€)</label>
                                     <span class="inputwrap">
-                                        <%= text_field_tag 'min-price', 'Oricat', :class => "search-input" %>
+                                        <%= text_field_tag 'min-price', '', :class => "search-input" %>
                                     </span>
       </div>
 
       <div class="option-bar small last">
         <label>Pret Maxim(€)</label>
                                     <span class="inputwrap">
-                                        <%= text_field_tag 'max-price', 'Oricat', :class => "search-input" %>
+                                        <%= text_field_tag 'max-price', '', :class => "search-input" %>
                                     </span>
       </div>
 
-        <%= submit_tag 'Cauta', :name => "nil", :class => "real-btn btn" %>
+        <%= submit_tag 'Cauta', :class => "real-btn btn" %>
     <% end %>
   </div>
 </section><!-- End .advance-search -->

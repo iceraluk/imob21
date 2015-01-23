@@ -124,7 +124,7 @@ class Offer < ActiveRecord::Base
       condition << "nr_camere = " + search["nr-camere"].to_i.to_s
     end
 
-    if search['min-price'] && search['min-price'] != "Oricat"
+    if search['min-price'] && search['min-price'] != ""
       condition << " AND " if !condition.empty?
       if search["max-price"].include?('.')
         price = search["min-price"].gsub!(/\./,"")
@@ -142,7 +142,7 @@ class Offer < ActiveRecord::Base
       end
     end
 
-    if search['max-price'] && search['max-price'] != "Oricat"
+    if search['max-price'] && search['max-price'] != ""
       condition << " AND " if !condition.empty?
       if search["max-price"].include?('.')
         price = search["max-price"].gsub!(/\./,"")
