@@ -31,6 +31,8 @@
 }
 
 #offer-image-list {
+  display: block;
+  float: left;
   .thumbnail {
     -webkit-transition: none;
     -o-transition: none;

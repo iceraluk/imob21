@@ -7,7 +7,7 @@
         <label>Zona</label>
                                     <span class="selectwrap">
                                         <select name="location" id="select-location" class="search-select">
-                                          <% Offer.zone.each do |zona| %>
+                                          <% Offer::ZONE.each do |zona| %>
                                               <option value="<%= zona.try(:downcase) %>"><%= zona.try(:capitalize) %></option>
                                           <% end %>
                                           <option value="oricare" selected="selected">Oricare</option>
@@ -19,7 +19,7 @@
         <label>Cartier</label>
                                     <span class="selectwrap">
                                         <select name="status" id="select-status" class="search-select">
-                                          <% Offer.cartiere.each do |cartier| %>
+                                          <% Offer::CARTIERE.each do |cartier| %>
                                               <option value="<%= cartier.try(:downcase) %>"><%= cartier.try(:capitalize) %></option>
                                           <% end %>
                                           <option value="oricare" selected="selected">Oricare</option>
@@ -31,9 +31,8 @@
         <label>Tip Operatiune</label>
                                     <span class="selectwrap">
                                         <select name="type" id="select-property-type" class="search-select">
-                                          <% Offer.tipuri_operatiune.each do |op| %>
-                                              <option value="<%= op.try(:downcase) %>"><%= op.try(:capitalize) %></option>
-                                          <% end %>
+                                          <option value="vanzare">Vanzare</option>
+                                          <option value="cumparare">Cumparare</option>
                                           <option value="oricare" selected="selected">Oricare</option>
                                         </select>
                                     </span>
@@ -59,68 +58,23 @@
                                           <option value="2">2</option>
                                           <option value="3">3</option>
                                           <option value="4">4</option>
-                                          <option value="5">5</option>
-                                          <option value="6">6</option>
-                                          <option value="7">7</option>
-                                          <option value="8">8</option>
-                                          <option value="9">9</option>
-                                          <option value="10">10</option>
+                                          <option value="5">5+</option>
                                           <option value="oricat" selected="selected">Oricat</option>
                                         </select>
                                     </span>
       </div>
 
       <div class="option-bar small second-last">
-        <label>Pret Minim</label>
-                                    <span class="selectwrap">
-                                        <select name="min-price" id="select-min-price" class="search-select">
-                                          <option value="1000">$1,000</option>
-                                          <option value="5000">$5,000</option>
-                                          <option value="10000">$10,000</option>
-                                          <option value="50000">$50,000</option>
-                                          <option value="100000">$100,000</option>
-                                          <option value="200000">$200,000</option>
-                                          <option value="300000">$300,000</option>
-                                          <option value="400000">$400,000</option>
-                                          <option value="500000">$500,000</option>
-                                          <option value="600000">$600,000</option>
-                                          <option value="700000">$700,000</option>
-                                          <option value="800000">$800,000</option>
-                                          <option value="900000">$900,000</option>
-                                          <option value="1000000">$1,000,000</option>
-                                          <option value="1500000">$1,500,000</option>
-                                          <option value="2000000">$2,000,000</option>
-                                          <option value="2500000">$2,500,000</option>
-                                          <option value="5000000">$5,000,000</option>
-                                          <option value="oricat" selected="selected">Oricat</option>
-                                        </select>
+        <label>Pret Minim(€)</label>
+                                    <span class="inputwrap">
+                                        <%= text_field_tag 'min-price', 'Oricat', :class => "search-input" %>
                                     </span>
       </div>
 
       <div class="option-bar small last">
-        <label>Pret Maxim</label>
-                                    <span class="selectwrap">
-                                        <select name="max-price" id="select-max-price" class="search-select">
-                                          <option value="5000">$5,000</option>
-                                          <option value="10000">$10,000</option>
-                                          <option value="50000">$50,000</option>
-                                          <option value="100000">$100,000</option>
-                                          <option value="200000">$200,000</option>
-                                          <option value="300000">$300,000</option>
-                                          <option value="400000">$400,000</option>
-                                          <option value="500000">$500,000</option>
-                                          <option value="600000">$600,000</option>
-                                          <option value="700000">$700,000</option>
-                                          <option value="800000">$800,000</option>
-                                          <option value="900000">$900,000</option>
-                                          <option value="1000000">$1,000,000</option>
-                                          <option value="1500000">$1,500,000</option>
-                                          <option value="2000000">$2,000,000</option>
-                                          <option value="2500000">$2,500,000</option>
-                                          <option value="5000000">$5,000,000</option>
-                                          <option value="10000000">$10,000,000</option>
-                                          <option value="oricat" selected="selected">Oricat</option>
-                                        </select>
+        <label>Pret Maxim(€)</label>
+                                    <span class="inputwrap">
+                                        <%= text_field_tag 'max-price', 'Oricat', :class => "search-input" %>
                                     </span>
       </div>
 

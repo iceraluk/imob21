@@ -31,7 +31,7 @@
 
 
     <%= render partial: "offer_images", locals: { f: f } if @offer %>
-<div class="clear" style="height:500px"></div>
+<div class="clear" style="height:250px"></div>
     <h4>Detalii Pret</h4>
 
     <div class="input-group">
@@ -70,11 +70,11 @@
     </div>
     <div class="input-group">
       <%= f.label :cartier, :class => "input-group-addon" %>
-      <%= f.text_field :cartier, :class => "form-control" %>
+      <%= f.select(:cartier, Offer::CARTIERE.collect{|c|[c]}, {:include_blank => true}) %>
     </div>
     <div class="input-group">
       <%= f.label :zona, :class => "input-group-addon" %>
-      <%= f.text_field :zona, :class => "form-control" %>
+      <%= f.select(:zona, Offer::ZONE.collect{|z|[z]}, {:include_blank => true}) %>
     </div>
     <div class="input-group">
       <%= f.label :adresa,"Adresa(neafisata)", :class => "input-group-addon" %>
