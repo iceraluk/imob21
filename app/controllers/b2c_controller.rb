@@ -19,7 +19,9 @@ class B2cController < ApplicationController
   end
 
   def listare_oferte
-    @offers = Offer.search(params)
+    require 'will_paginate/array'
+    @offers = Offer.search(params).paginate(:page => params[:page], :per_page => 20)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @offers.to_json, :callback => params[:callback] }

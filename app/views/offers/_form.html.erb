@@ -89,7 +89,7 @@
 
     <div class="input-group">
       <%= f.label :tip_oferta, :class => "input-group-addon" %>
-      <%= f.select(:tip_oferta, ['Apartament','Garsioniera','Casa', 'Spatiu Comercial', "Birour", "Teren extravilan", "Teren Intravilan"], {:class => "form-control"}) %>
+      <%= f.select(:tip_oferta, Offer::TIPURI_OFERTA.collect{|o|[o]}, {:class => "form-control"}) %>
     </div>
 
     <div class="input-group">

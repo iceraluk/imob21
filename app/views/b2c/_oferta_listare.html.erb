@@ -1,0 +1,21 @@
+
+<article class="property-item clearfix">
+  <figure>
+
+  <% if offer.offer_images.any? %>
+      <%= link_to image_tag(imaginea_principala_listare(offer), :class => "attachment-grid-view-image wp-post-image", :style => "height: 123px; width: 245px "), b2c_offer_path(offer) %>
+  <% end %>
+
+    <% if offer.exclusiva %>
+        <figcaption>OFERTA EXCLUSIVA</figcaption>
+    <% end %>
+  </figure>
+
+  <h4>
+    <a href="<%= b2c_offer_path(offer) %>"><%= offer.tip_operatiune %> <%= offer.tip_oferta %> <%= offer.nr_camere %> <%= camere(offer.nr_camere) %></a>
+  </h4>
+  <p><%= offer.tip_oferta %> de <%= offer.nr_camere %> <%= camere(offer.nr_camere).downcase %> de <%= offer.tip_operatiune.downcase %> in zona <%= offer.zona %>, <%= offer.cartier %>, <%= offer.localitate %>
+    <%= link_to "Detalii <i class='icon-caret-right'></i>".html_safe, b2c_offer_path(offer), class: "more-details" %></p>
+
+  <span><%= pret(offer.pret_vanzare, offer.pret_inchiriere) %><small> <%= pret_per(offer.moneda, offer.pret_per) %></small></span>
+</article>

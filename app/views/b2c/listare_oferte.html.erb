@@ -1,8 +1,6 @@
 <% if @offers.any? %>
 
-<% @offers.each do |offer| %>
-<%= offer.id %>
-<% end %>
+    <%= render 'oferte_listare', offers: @offers %>
 
 <% else %>
    <h4> Nu a fost gasita nicio oferta pentru cautarea dumneavoastra. </h4>

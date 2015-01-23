@@ -59,6 +59,7 @@ class Offer < ActiveRecord::Base
 
   ZONE = ['Ultracentral', 'Nord', 'Central', 'Vest', 'Exterior-Vest', 'Exterior-Est', 'Exterior-Nord', 'Exterior-Sud']
   CARTIERE = ['Cantacuzino', 'Cina', 'Republicii', 'Aurora', 'Mihai Bravu', 'Bariera-Obor', 'Bariera-Bucuresti', 'Independentei', 'Cioceanu', 'Bereasca', 'Albert', 'Malu Rosu']
+  TIPURI_OFERTA = ['Apartament','Garsioniera','Casa', 'Spatiu Comercial', "Birouri", "Teren extravilan", "Teren Intravilan"]
 
   def full_street_address
     adresa.to_s + ', ' + localitate.to_s + ', Prahova, Romania'
@@ -86,10 +87,6 @@ class Offer < ActiveRecord::Base
     all.uniq{|o| o.cartier}.map{|o| o.cartier}
   end
 
-  def self.tipuri_oferta
-    ['Apartament','Garsioniera','Casa', 'Spatiu Comercial', "Birour", "Teren extravilan", "Teren Intravilan"]
-  end
-
   def self.tipuri_operatiune
     all.uniq{|o| o.tip_operatiune}.map{|o| o.tip_operatiune}
   end
@@ -103,31 +100,31 @@ class Offer < ActiveRecord::Base
     #     "min-price"=>"Oricat",
     #     "max-price"=>"Oricat",
     condition = ""
-    if search['zone'] != "oricare"
+    if search['zone'] && search['zone'] != "oricare"
       condition << "lower(zona) LIKE '" + search["zone"].downcase.to_s + "'"
     end
 
-    if search['tip-operatiune'] != "oricare"
+    if search['tip-operatiune'] && search['tip-operatiune'] != "oricare"
       condition << " AND " if !condition.empty?
       condition << "lower(tip_operatiune) LIKE '" + search["tip-operatiune"].downcase.to_s + "'"
     end
 
-    if search['cartier'] != "oricare"
+    if search['cartier'] && search['cartier'] != "oricare"
       condition << " AND " if !condition.empty?
       condition << "lower(cartier) LIKE '" + search["cartier"].downcase.to_s + "'"
     end
 
-    if search['tip-oferta'] != "oricare"
+    if search['tip-oferta'] && search['tip-oferta'] != "oricare"
       condition << " AND " if !condition.empty?
       condition << "lower(tip_oferta) LIKE '" + search["tip-oferta"].downcase.to_s + "'"
     end
 
-    if search['nr-camere'] != "oricat"
+    if search['nr-camere'] && search['nr-camere'] != "oricat"
       condition << " AND " if !condition.empty?
       condition << "nr_camere = " + search["nr-camere"].to_i.to_s
     end
 
-    if search['min-price'] != "Oricat"
+    if search['min-price'] && search['min-price'] != "Oricat"
       condition << " AND " if !condition.empty?
       if search["max-price"].include?('.')
         price = search["min-price"].gsub!(/\./,"")
@@ -145,7 +142,7 @@ class Offer < ActiveRecord::Base
       end
     end
 
-    if search['max-price'] != "Oricat"
+    if search['max-price'] && search['max-price'] != "Oricat"
       condition << " AND " if !condition.empty?
       if search["max-price"].include?('.')
         price = search["max-price"].gsub!(/\./,"")

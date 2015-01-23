@@ -41,7 +41,7 @@
         <label>Tip Oferta</label>
                                     <span class="selectwrap">
                                         <select name="tip-oferta" id="select-bedrooms" class="search-select">
-                                          <% Offer.tipuri_oferta.each do |tip_oferta| %>
+                                          <% Offer::TIPURI_OFERTA.each do |tip_oferta| %>
                                               <option value="<%= tip_oferta.try(:downcase) %>"><%= tip_oferta.try(:capitalize) %></option>
                                           <% end %>
                                           <option value="oricare" selected="selected">Oricare</option>

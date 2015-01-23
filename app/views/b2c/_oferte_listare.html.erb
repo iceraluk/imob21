@@ -1,0 +1,24 @@
+
+<!-- Main Content -->
+<div class="main" style="width: 870px; float: left">
+  <section class="listing-layout property-grid">
+
+    <div class="list-container clearfix">
+      <% offers.each do |offer| %>
+        <%= render "oferta_listare", offer: offer %>
+      <% end %>
+
+    </div>
+
+    <div class="mypagination" style="height: 50px">
+      <%= will_paginate @offers, :container => false %>
+    </div>
+  </section>
+
+</div><!-- End Main Content -->
+
+<!-- Sidebar -->
+<div class="span3 sidebar-wrap" style="margin-left: 20px">
+  <%= render "oferta_sidebar" %>
+  </div>
+</div> <!-- End span9 -->
