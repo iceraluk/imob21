@@ -68,6 +68,9 @@ gem 'sinatra', "~> 1.4.5"
 # Newrelic
 gem 'newrelic_rpm'
 
+# For geolocation
+gem 'geocoder', '~> 1.2.6'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -25,10 +25,6 @@ class OfferImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [246, 162]
   end
 
-  version :post do
-    process :resize_to_fill => [830, 323]
-  end
-
   version :listing do
     process :resize_to_fill => [770, 386]
   end

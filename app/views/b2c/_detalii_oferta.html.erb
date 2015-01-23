@@ -1,4 +1,4 @@
-<p><%= offer.tip_oferta %> de <%= offer.nr_camere %> <%= camere(offer.nr_camere).downcase %> de <%= offer.tip_operatiune.downcase %> in zona <%= offer.zona %>, <%= offer.cartier %>, <%= offer.localitate %>. Pretul este de <%= pret(offer.pret_vanzare, offer.pret_inchiriere) %> <%= pret_per(offer.moneda, offer.pret_per) %> <%= 'negociabil' if offer.negociabil %>. Disponibilitate <%= offer.disponibilitate %></p>
+<p><%= offer.tip_oferta %> de <%= offer.nr_camere %> <%= camere(offer.nr_camere).downcase %> de <%= offer.tip_operatiune.downcase %> in zona <%= offer.zona %>, <%= offer.cartier %>, <%= offer.localitate %>, Prahova. Pretul este de <%= pret(offer.pret_vanzare, offer.pret_inchiriere) %> <%= pret_per(offer.moneda, offer.pret_per) %> <%= 'negociabil' if offer.negociabil %>. Disponibilitate <%= offer.disponibilitate %></p>
 <h3>Caracteristici</h3>
 <table style="width: 100%">
 <tr>

@@ -15,3 +15,10 @@
 //= require elastislide/jquery.elastislide.js
 //= require swipebox/jquery.swipebox.min.js
 //= require prettyphoto/jquery.prettyPhoto.js
+//= require ../jquery.isotope.min.js
+//= require ../jquery.jcarousel.min.js
+//= require ../jquery.validate.min.js
+//= require ../jquery.form.js
+//= require ../jquery.selectbox.js
+//= require ../jquery.transit.min.js
+//= require ../jquery-twitterFetcher.js

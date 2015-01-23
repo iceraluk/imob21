@@ -48,6 +48,9 @@ class Offer < ActiveRecord::Base
 
   attr_accessor :new_image_token
 
+  geocoded_by :full_street_address   # can also be an IP address
+  after_validation :geocode          # auto-fetch coordinates
+
   belongs_to :owner
   has_many :offer_images
   accepts_nested_attributes_for :offer_images, allow_destroy: true
@@ -56,6 +59,11 @@ class Offer < ActiveRecord::Base
 
   ZONE = ['Ultracentral', 'Nord', 'Central', 'Vest', 'Exterior-Vest', 'Exterior-Est', 'Exterior-Nord', 'Exterior-Sud']
   CARTIERE = ['Cantacuzino', 'Cina', 'Republicii', 'Aurora', 'Mihai Bravu', 'Bariera-Obor', 'Bariera-Bucuresti', 'Independentei', 'Cioceanu', 'Bereasca', 'Albert', 'Malu Rosu']
+
+  def full_street_address
+    adresa.to_s + ', ' + localitate.to_s + ', Prahova, Romania'
+  end
+
   def is_inactive?
     return true if !active
     return true if active && status != 'Activ'
