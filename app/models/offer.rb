@@ -70,6 +70,14 @@ class Offer < ActiveRecord::Base
     return false
   end
 
+  def create_new_image_token
+    self.new_image_token = self.secure_token
+  end
+
+  def secure_token
+    SecureRandom.uuid
+  end
+
   def self.zone
     all.uniq{|o| o.zona}.map{|o| o.zona}
   end
@@ -86,12 +94,81 @@ class Offer < ActiveRecord::Base
     all.uniq{|o| o.tip_operatiune}.map{|o| o.tip_operatiune}
   end
 
-  def create_new_image_token
-    self.new_image_token = self.secure_token
-  end
+  def self.search(search)
+    # "zone"=>"oricare",
+    #     "cartier"=>"oricare",
+    #     "tip-operatiune"=>"oricare",
+    #     "tip-oferta"=>"oricare",
+    #     "nr-camere"=>"oricat",
+    #     "min-price"=>"Oricat",
+    #     "max-price"=>"Oricat",
+    condition = ""
+    if search['zone'] != "oricare"
+      condition << "lower(zona) LIKE '" + search["zone"].downcase.to_s + "'"
+    end
 
-  def secure_token
-    SecureRandom.uuid
+    if search['tip-operatiune'] != "oricare"
+      condition << " AND " if !condition.empty?
+      condition << "lower(tip_operatiune) LIKE '" + search["tip-operatiune"].downcase.to_s + "'"
+    end
+
+    if search['cartier'] != "oricare"
+      condition << " AND " if !condition.empty?
+      condition << "lower(cartier) LIKE '" + search["cartier"].downcase.to_s + "'"
+    end
+
+    if search['tip-oferta'] != "oricare"
+      condition << " AND " if !condition.empty?
+      condition << "lower(tip_oferta) LIKE '" + search["tip-oferta"].downcase.to_s + "'"
+    end
+
+    if search['nr-camere'] != "oricat"
+      condition << " AND " if !condition.empty?
+      condition << "nr_camere = " + search["nr-camere"].to_i.to_s
+    end
+
+    if search['min-price'] != "Oricat"
+      condition << " AND " if !condition.empty?
+      if search["max-price"].include?('.')
+        price = search["min-price"].gsub!(/\./,"")
+      elsif search["min-price"].include?(',')
+        price = search["min-price"].gsub!(/\,/,"")
+      else
+        price = search["min-price"]
+      end
+      if search['tip-operatiune'].downcase == "inchiriere"
+        condition << "pret_inchiriere > " + price.to_i.to_s
+      elsif search['tip-operatiune'].downcase == "vanzare"
+        condition << "pret_vanzare > " + price.to_i.to_s
+      else
+        condition << "(pret_vanzare > " + price.to_i.to_s + " OR pret_inchiriere > " + price.to_i.to_s + ")"
+      end
+    end
+
+    if search['max-price'] != "Oricat"
+      condition << " AND " if !condition.empty?
+      if search["max-price"].include?('.')
+        price = search["max-price"].gsub!(/\./,"")
+      elsif search["max-price"].include?(',')
+        price = search["max-price"].gsub!(/\,/,"")
+      else
+        price = search["max-price"]
+      end
+      if search['tip-operatiune'].downcase == "inchiriere"
+        condition << "pret_inchiriere < " + price.to_i.to_s
+      elsif search['tip-operatiune'].downcase == "inchiriere"
+        condition << "pret_vanzare < " + price.to_i.to_s
+      else
+        condition << "(pret_vanzare < " + price.to_i.to_s + " AND pret_inchiriere < " + price.to_i.to_s + ")"
+      end
+    end
+
+    if !condition.empty?
+      find(:all, :conditions => [condition])
+    else
+      find(:all)
+    end
+
   end
 
 end

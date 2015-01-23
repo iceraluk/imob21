@@ -603,7 +603,7 @@ body {
   width: 172px;
 }
 .advance-search .option-bar.large {
-  /*margin-right: 25px;*/
+  margin-right: 25px;
   width: 276px;
 }
 .advance-search .option-bar.last {

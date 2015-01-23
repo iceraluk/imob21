@@ -1,0 +1,9 @@
+<% if @offers.any? %>
+
+<% @offers.each do |offer| %>
+<%= offer.id %>
+<% end %>
+
+<% else %>
+   <h4> Nu a fost gasita nicio oferta pentru cautarea dumneavoastra. </h4>
+<% end %>
