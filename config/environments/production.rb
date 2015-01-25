@@ -61,6 +61,7 @@ Imob21::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
+
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
@@ -71,6 +72,8 @@ Imob21::Application.configure do
                                          :user_name => ENV['SENDGRID_USERNAME'],
                                          :password => ENV['SENDGRID_PASSWORD'],
                                          :domain => 'heroku.com' }
+
+  config.action_mailer.default_url_options = { :host => ENV['EMAIL_DEFAULT_URL'] }
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
