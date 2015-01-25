@@ -16,6 +16,12 @@
     </div>
 
     <div class="input-group">
+      <%= f.label :admin_id, "Agent*", :class => "input-group-addon" %>
+      <%= f.select(:admin_id, Admin.all_ordered.collect{|o|[o.nume.to_s + " " + o.prenume.to_s + " - " + o.email.to_s, o.id]}, {:class => "form-control"}) %>
+      <i><%= link_to "+ Adauga admin", new_admin_path %></i>
+    </div>
+
+    <div class="input-group">
       <%= f.label :status, "Status*", :class => "input-group-addon" %>
       <%= f.select(:status, ["Activ", "Inchiriat", "Tranzactionat"]) %>
     </div>

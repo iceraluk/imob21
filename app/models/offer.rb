@@ -42,6 +42,7 @@ class Offer < ActiveRecord::Base
                   :negociabil,
                   :sursa,
                   :owner_id,
+                  :admin_id,
                   :status, #"Activ", "Inchiriat", "Tranzactionat"
                   :exclusiva,
                   :offer_images_attributes
@@ -52,6 +53,7 @@ class Offer < ActiveRecord::Base
   after_validation :geocode          # auto-fetch coordinates
 
   belongs_to :owner
+  belongs_to :admin
   has_many :offer_images
   accepts_nested_attributes_for :offer_images, allow_destroy: true
 

@@ -2793,6 +2793,9 @@ address {
   background: url(images/icon-phone.png) no-repeat left center;
   border-top: none;
 }
+#overview .contacts-list li.email {
+  background: url(images/icon-mail.png) no-repeat left center;
+}
 #overview .contacts-list li.mobile {
   background: url(images/icon-mobile.png) no-repeat left center;
 }

@@ -1,34 +1,3 @@
-
-<!--<div class="inner-wrapper" style="width: 826px; float: left;">-->
-<!--<article class="format-gallery">-->
-<!--<header>-->
-<!--<h3 class="post-title"><%#= @offer.tip_operatiune %> <%#= @offer.tip_oferta %> <%#= @offer.nr_camere %> <%#= camere(@offer.nr_camere) %></h3>-->
-
-<!--<div class="post-meta gallery-meta thumb-exist">-->
-<!--<span> Postat pe data de <span class="date">  <%#= @offer.created_at.strftime("%d/%m/%Y") %></span></span>-->
-<!--</div>-->
-<!--</header>-->
-<!--<div class="listing-slider">-->
-<!--<span class="format-icon gallery"></span>-->
-
-<!--<div class="flex-viewport" style="overflow: hidden; position: relative;">-->
-<!--<ul class="slides">-->
-
-
-<!--</ul>-->
-<!--</div>-->
-
-<!--<ul class="flex-direction-nav">-->
-<!--<li><a class="flex-prev" href="#">Previous</a></li>-->
-<!--<li><a class="flex-next" href="#">Next</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-
-<!--<%#= render "detalii_oferta", offer: @offer %>-->
-<!--</article>-->
-
-<!--</div>-->
-
 <div class="container contents lisitng-grid-layout">
 
   <div class="row">
@@ -195,49 +164,7 @@
           <!--</div>-->
           <!--</div>-->
 
-          <div class="agent-detail clearfix">
-
-            <div class="left-box">
-              <h3>Agent John Doe</h3>
-              <figure>
-                <a href="#">
-                  <img src="images/temp-images/agent-john.jpg"  alt="agent pic">
-                </a>
-              </figure>
-              <ul class="contacts-list">
-                <li class="office">Telefon : 041-456-7890</li>
-                <li class="mobile">Email : 0223-123-4567</li>
-                <li class="fax">Fax  : 041-789-1234</li>
-              </ul>
-            </div>
-
-            <div class="contact-form">
-
-              <h3>Contact</h3>
-
-              <form id="agent-contact-form" class="contact-form-small" method="post" action="agent_form_handler.php">
-
-                <input type="text" name="name" id="name" value="Nume" class="required" title="* Va rugam sa va adaugati numele">
-
-                <input type="text" name="email" id="email" value="Email" class="email required" title="* Va rugam sa adaugati o adresa de email sa stim cum sa va contactam">
-
-                <textarea name="message" id="comment" class="required" title="* Va rugam sa scrieti un mesaj">Mesaj</textarea>
-
-                <input type="hidden" name="target" value="robot@psdtohtmlwp.com">
-                <input type="hidden" name="action" value="send_message_to_agent">
-                <input type="hidden" name="property_title" value="700 Front Street, Key West, FL">
-                <input type="hidden" name="property_permalink" value="http://www.960demo.com/realhomes-html/property.php">
-
-                <input type="submit" value="Trimite" name="submit" class="real-btn">
-                <img src="images/ajax-loader.gif" id="contact-loader" alt="Loading...">
-
-              </form>
-
-              <div class="error-container"></div>
-              <div id="message-sent">&nbsp;</div>
-            </div>
-          </div>
-
+          <%= render "detalii_agent", agent: @offer.admin %>
         </section>
 
       </div><!-- End Main Content -->
