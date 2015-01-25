@@ -10,7 +10,7 @@
     <% @offers.each do |offer| %>
         <div class="span6 ">
           <article class="property-item clearfix">
-            <h4><a href="<%= b2c_offer_path(offer) %>"><%= offer.tip_operatiune %> <%= offer.tip_oferta %> <%= offer.nr_camere %> <%= camere(offer.nr_camere) %></a></h4>
+            <h4><a href="<%= b2c_offer_path(offer) %>"><%= offer.titlu %></a></h4>
 
             <figure>
               <% if offer.offer_images.any? %>
