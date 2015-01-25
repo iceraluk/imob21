@@ -8,5 +8,6 @@ class Admin < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :mobile, :fax, :nume, :prenume, :image
   # attr_accessible :title, :body
+  scope :all_ordered, order("id ASC")
 
 end

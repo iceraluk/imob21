@@ -1,0 +1,14 @@
+<tr>
+  <td><%= vendor.id %></td>
+  <td><%= vendor.vendor_brands.first.try(:title) %></td>
+  <td><%= vendor.type %></td>
+  <td><%= vendor.first_name %></td>
+  <td><%= vendor.last_name %></td>
+  <td><%= vendor.email %></td>
+  <!--<td><%#= vendor.events_live_count %></td>-->
+  <!--<td><%#= vendor.last_transaction_on %></td>-->
+  <!--<td><%#= vendor.month_transactions %></td>-->
+  <!--<td><%#= vendor.month_revenue %></td>-->
+  <td><%= link_to "Edit", edit_admin_site_vendor_path(vendor.id) %></td>
+  <td><%= link_to "Destroy", admin_site_vendor_path(vendor.id), method: :delete %></td>
+</tr>

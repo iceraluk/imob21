@@ -1,0 +1,39 @@
+<div class="inner-wrapper">
+  <%= link_to " Adauga Agent", new_admin_path, :class => "real-btn btn", :style => "margin: 40px 0" %>
+
+  <table id="datatable" class="table table-striped table-bordered table-hover dataTable no-footer">
+    <thead>
+    <tr>
+      <th>
+        #
+      </th>
+      <th>
+        Nume
+      </th>
+      <th>
+        Prenume
+      </th>
+      <th>
+        Email
+      </th>
+      <th>
+        Tel
+      </th>
+      <th>
+        Fax
+      </th>
+      <th>
+        Editeaza
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @admins.each do |a| %>
+        <%= render "all_admins", admin: a %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+

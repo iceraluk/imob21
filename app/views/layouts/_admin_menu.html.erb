@@ -3,5 +3,6 @@
   <li role="presentation" class="<%= 'active' if controller.controller_name == 'offers' %>"><%= link_to "Oferte", offers_path %></li>
   <li role="presentation" class="<%= 'active' if controller.controller_name == 'offers' %>"><%= link_to "Proprietari", owners_path %></li>
   <li role="presentation" class="<%= 'active' if controller.controller_name == 'clients' %>"><%= link_to "Clienti", clients_path %></li>
+  <li role="presentation" class="<%= 'active' if controller.controller_name == 'admins' %>"><%= link_to "Agenti", admins_path %></li>
   <li role="presentation"><%= link_to "Log Out", destroy_admin_session_path, :method => :delete %></li>
 </ul>
