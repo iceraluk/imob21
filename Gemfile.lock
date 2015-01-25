@@ -287,5 +287,5 @@ DEPENDENCIES
   sidekiq (~> 3.3.0)
   sinatra (~> 1.4.5)
   uglifier (>= 1.0.3)
-  unicorn
+  unicorn (~> 4.8.3)
   will_paginate (~> 3.0.6)
