@@ -45,7 +45,8 @@ class Offer < ActiveRecord::Base
                   :admin_id,
                   :status, #"Activ", "Inchiriat", "Tranzactionat"
                   :exclusiva,
-                  :offer_images_attributes
+                  :offer_images_attributes,
+                  :descriere
 
   attr_accessor :new_image_token
 

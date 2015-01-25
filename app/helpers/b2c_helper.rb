@@ -9,7 +9,7 @@ module B2cHelper
   end
 
   def pret(pret_vanzare, pret_inchiriere)
-    if pret_vanzare
+    if pret_vanzare && pret_vanzare > 0
       return pret_vanzare
     else
       return pret_inchiriere

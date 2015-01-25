@@ -9,6 +9,11 @@
       <%= f.text_field :titlu, :class => "form-control" %>
     </div>
 
+    <div class="input-group" style="height: 170px">
+      <%= f.label :descriere,"Descriere*", :class => "input-group-addon" %>
+      <%= f.text_area :descriere, :class => "form-control", :style => "height: 150px" %>
+    </div>
+
     <div class="input-group">
       <%= f.label :owner_id, "Proprietar*", :class => "input-group-addon" %>
       <%= f.select(:owner_id, Owner.all_ordered.collect{|o|[o.nume.to_s + " " + o.prenume.to_s , o.id]}, {:class => "form-control"}) %>

@@ -31,7 +31,7 @@
           <article class="property-item clearfix">
 
             <div class="wrap clearfix">
-              <h4 class="title"><%= @offer.zona %>, <%= @offer.cartier %>, <%= @offer.localitate %>, Prahova</h4>
+              <h4 class="title"><%= @offer.titlu %></h4>
               <h5 class="price">
                                     <span class="status-label">
                                        <%= @offer.tip_operatiune %>
@@ -42,14 +42,8 @@
               </h5>
             </div>
 
-            <div class="property-meta clearfix">
-              <span><i class="icon-area"></i><%= @offer.suprafata_utila_mp %> mp suprafata utila</span><span><i class="icon-bed"></i><%= @offer.dormitoare %> &nbsp;<%= dormitoare(@offer.dormitoare) %></span><span><i class="icon-bath"></i><%= @offer.nr_bai %>&nbsp;<%= bai(@offer.nr_bai) %></span>
-              <!-- Print Icon -->
-              <span class="printer-icon"><a href="javascript:window.print()">Print this page</a></span>
-            </div>
-
             <div class="content clearfix">
-              <p><%= @offer.tip_oferta %> de <%= @offer.nr_camere %> <%= camere(@offer.nr_camere).downcase %> de <%= @offer.tip_operatiune.downcase %> in zona <%= @offer.zona %>, <%= @offer.cartier %>, <%= @offer.localitate %>, Prahova. Pretul este de <%= pret(@offer.pret_vanzare, @offer.pret_inchiriere) %> <%= pret_per(@offer.moneda, @offer.pret_per) %> <%= 'negociabil' if @offer.negociabil %>. Disponibilitate <%= @offer.disponibilitate %></p>
+              <p><%= @offer.descriere %></p>
             </div>
 
             <div class="features">

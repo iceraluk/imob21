@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150125170440) do
+ActiveRecord::Schema.define(:version => 20150125211602) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(:version => 20150125170440) do
     t.string   "status"
     t.boolean  "exclusiva"
     t.integer  "admin_id"
+    t.text     "descriere"
   end
 
   create_table "owners", :force => true do |t|
