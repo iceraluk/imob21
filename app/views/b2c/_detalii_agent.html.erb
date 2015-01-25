@@ -2,41 +2,46 @@
 
   <div class="left-box">
     <h3>Agent <%= agent.nume.to_s + " " + agent.prenume.to_s %></h3>
-    <figure>
-      <a href="#">
-        <img src="images/temp-images/agent-john.jpg"  alt="agent pic">
-      </a>
-    </figure>
+    <!--<figure>-->
+      <!--<a href="#">-->
+        <!--<img src="images/temp-images/agent-john.jpg"  alt="agent pic">-->
+      <!--</a>-->
+    <!--</figure>-->
     <ul class="contacts-list">
       <li class="office">Telefon : <%= agent.mobile %></li>
-      <li class="email">Email : <%= agent.email %></li>
+      <li class="email">Email : <a href="mailto: <%= agent.email %>"><%= agent.email %></a></li>
       <li class="fax">Fax  : <%= agent.fax %></li>
     </ul>
   </div>
 
   <div class="contact-form">
 
-    <h3>Contact</h3>
+    <h3 id="contact">Contact</h3>
 
-    <form id="agent-contact-form" class="contact-form-small" method="post" action="agent_form_handler.php">
+    <%= form_for @message, :html => {:multipart => true, class: "contact-form-small"} do |form| %>
+        <fieldset class="fields">
+          <div class="field">
+            <%= form.text_field :nume, :placeholder => "Name" %>
+          </div>
 
-      <input type="text" name="name" id="name" value="Nume" class="required" title="* Va rugam sa va adaugati numele">
+          <div class="field">
+            <%= form.text_field :email, :placeholder => "Email" %>
+          </div>
 
-      <input type="text" name="email" id="email" value="Email" class="email required" title="* Va rugam sa adaugati o adresa de email sa stim cum sa va contactam">
+          <div class="field">
+            <%= form.text_area :mesaj, :placeholder => "Scrieti mesajul aici..." %>
+          </div>
 
-      <textarea name="message" id="comment" class="required" title="* Va rugam sa scrieti un mesaj">Mesaj</textarea>
+            <%= form.hidden_field :offer_id, :value => offer.id %>
+        </fieldset>
 
-      <input type="hidden" name="target" value="robot@psdtohtmlwp.com">
-      <input type="hidden" name="action" value="send_message_to_agent">
-      <input type="hidden" name="property_title" value="700 Front Street, Key West, FL">
-      <input type="hidden" name="property_permalink" value="http://www.960demo.com/realhomes-html/property.php">
+        <fieldset class="actions">
+          <%= form.submit "Trimite", :class => "btn btn-large btn-primary" %>
+        </fieldset>
 
-      <input type="submit" value="Trimite" name="submit" class="real-btn">
-      <img src="images/ajax-loader.gif" id="contact-loader" alt="Loading...">
-
-    </form>
+    <% end %>
 
     <div class="error-container"></div>
-    <div id="message-sent">&nbsp;</div>
+    <div id="message-sent"><%= flash[:notice].to_s %></div>
   </div>
 </div>

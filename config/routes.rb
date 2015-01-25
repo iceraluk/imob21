@@ -10,6 +10,7 @@ Imob21::Application.routes.draw do
   resources :offers
   resources :clients
   resources :owners
+  resources :messages
   root :to => 'b2c#index'
   match "oferta/:id" => 'b2c#oferta', :as => "b2c_offer", via: :get
   match "listare_oferte" => 'b2c#listare_oferte', :as => "b2c_offer_listing", via: :get

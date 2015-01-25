@@ -12,6 +12,7 @@ class B2cController < ApplicationController
 
   def oferta
     @offer = Offer.find_by_id(params[:id])
+    @message = Message.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @offer.to_json, :callback => params[:callback] }
