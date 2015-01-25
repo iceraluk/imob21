@@ -23,7 +23,7 @@
 
             <div class="detail">
               <h5 class="price"><%= pret(offer.pret_vanzare, offer.pret_inchiriere) %><small> <%= pret_per(offer.moneda, offer.pret_per) %></small></h5>
-              <p><%= offer.tip_oferta %> de <%= offer.nr_camere %> <%= camere(offer.nr_camere).downcase %> de <%= offer.tip_operatiune.downcase %> in zona <%= offer.zona %>, <%= offer.cartier %>, <%= offer.localitate %> </p>
+              <p><%= offer.descriere %></p>
               <%= link_to "Detalii <i class='icon-caret-right'></i>".html_safe, b2c_offer_path(offer), class: "more-details" %>
             </div>
 
