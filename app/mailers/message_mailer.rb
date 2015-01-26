@@ -7,9 +7,9 @@ class MessageMailer < ActionMailer::Base
     email = message.offer.try(:admin).try(:email)
 
     if email
-      mail(:to => email, :subject => "[IMOB21] Mesaj nou")
+      mail(:to => email, :subject => "[IMOB21] Mesaj nou - oferta")
     else
-      mail(:to => 'iulia@ionita.me', :subject => "[ERROR - IMOB21] Mesajul nu a fost trimis")
+      mail(:to => Admin::EMAILS, :subject => "[IMOB21] Mesaj nou - contact")
     end
   end
 end

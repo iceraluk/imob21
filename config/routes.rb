@@ -14,6 +14,9 @@ Imob21::Application.routes.draw do
   root :to => 'b2c#index'
   match "oferta/:id" => 'b2c#oferta', :as => "b2c_offer", via: :get
   match "listare_oferte" => 'b2c#listare_oferte', :as => "b2c_offer_listing", via: :get
+  match "contact" => 'b2c#contact', :as => "b2c_contact", via: :get
+  match "despre_noi" => 'b2c#despre_noi', :as => "b2c_despre_noi", via: :get
+  match "informatii_utile" => 'b2c#informatii_utile', :as => "b2c_informatii_utile", via: :get
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

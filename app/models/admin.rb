@@ -10,4 +10,5 @@ class Admin < ActiveRecord::Base
   # attr_accessible :title, :body
   scope :all_ordered, order("email ASC")
 
+  EMAILS = %w(reneda2006@yahoo.com iulia@ionita.me)
 end

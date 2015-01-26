@@ -2,4 +2,6 @@ Nume: <%= @message.nume %>
 Email: <%= @message.email %>
 Mesaj: <%= @message.mesaj %>
 
-Oferta: <%= offer_url(@message.offer) %>
+<% if @message.offer %>
+    Oferta: <%= offer_url(@message.offer) %>
+<% end %>

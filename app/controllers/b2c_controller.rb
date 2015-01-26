@@ -29,4 +29,14 @@ class B2cController < ApplicationController
     end
   end
 
+  def despre_noi
+  end
+
+  def informatii_utile
+  end
+
+  def contact
+    @message = Message.new
+  end
+
 end
