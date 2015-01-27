@@ -2030,6 +2030,7 @@ p.wp-caption-text {
 /*------------------------------------------------------*/
 .single article p {
   margin-bottom: 15px;
+  height: 45px;
 }
 .single article blockquote p {
   line-height: 24px;
