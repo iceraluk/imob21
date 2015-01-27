@@ -4,6 +4,10 @@
 <%= form_for(@offer, :html => {:multipart => true, :class => "form-horizontal"} ) do |f| %>
     <h4>Detalii generale</h4>
 
+    <% if !@offer.new_record %>
+    <h3>Cod Unic: <%= @offer.cod_unic %></h3>
+    <% end %>
+
     <div class="input-group">
       <%= f.label :titlu,"Titlu*", :class => "input-group-addon" %>
       <%= f.text_field :titlu, :class => "form-control" %>
@@ -78,10 +82,6 @@
     <div class="input-group">
       <%= f.label :localitate, :class => "input-group-addon" %>
       <%= f.text_field :localitate, :class => "form-control" %>
-    </div>
-    <div class="input-group">
-      <%= f.label :cartier, :class => "input-group-addon" %>
-      <%= f.select(:cartier, Offer::CARTIERE.collect{|c|[c]}, {:include_blank => true}) %>
     </div>
     <div class="input-group">
       <%= f.label :zona, :class => "input-group-addon" %>

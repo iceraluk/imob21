@@ -15,18 +15,6 @@
       </div>
 
       <div class="option-bar large">
-        <label>Cartier</label>
-                                    <span class="selectwrap">
-                                        <select name="cartier" id="select-status" class="search-select">
-                                          <% Offer::CARTIERE.each do |cartier| %>
-                                              <option value="<%= cartier.try(:downcase) %>"><%= cartier.try(:capitalize) %></option>
-                                          <% end %>
-                                          <option value="oricare" selected="selected">Oricare</option>
-                                        </select>
-                                    </span>
-      </div>
-
-      <div class="option-bar large last">
         <label>Tip Operatiune</label>
                                     <span class="selectwrap">
                                         <select name="tip-operatiune" id="select-property-type" class="search-select">
@@ -37,7 +25,7 @@
                                     </span>
       </div>
 
-      <div class="option-bar small">
+      <div class="option-bar large last">
         <label>Tip Oferta</label>
                                     <span class="selectwrap">
                                         <select name="tip-oferta" id="select-bedrooms" class="search-select">
@@ -63,17 +51,24 @@
                                     </span>
       </div>
 
-      <div class="option-bar small second-last">
+      <div class="option-bar small ">
         <label>Pret Minim(€)</label>
                                     <span class="inputwrap">
                                         <%= text_field_tag 'min-price', '', :class => "search-input" %>
                                     </span>
       </div>
 
-      <div class="option-bar small last">
+      <div class="option-bar small second-last">
         <label>Pret Maxim(€)</label>
                                     <span class="inputwrap">
                                         <%= text_field_tag 'max-price', '', :class => "search-input" %>
+                                    </span>
+      </div>
+
+      <div class="option-bar small last">
+        <label>Cod Unic</label>
+                                    <span class="inputwrap">
+                                        <%= text_field_tag 'cod-unic', '', :class => "search-input" %>
                                     </span>
       </div>
 
