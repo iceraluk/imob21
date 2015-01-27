@@ -30,6 +30,7 @@ class B2cController < ApplicationController
   end
 
   def despre_noi
+    @admins = Admin.all_ordered
   end
 
   def informatii_utile

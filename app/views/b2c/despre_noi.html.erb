@@ -1,0 +1,16 @@
+<div class="inner-wrapper">
+      <h4>Echipa</h4>
+
+      <% @admins.all.each do |admin| %>
+      <div style="width: 50%; max-width: 500px; margin:40px auto; border: 1px solid lightgray; padding: 20px">
+        <h5>Agent <%= admin.nume.to_s + " " +admin.prenume.to_s %></h5>
+        <p><b>Email:</b> <%= admin.email %></p>
+        <% if admin.mobile %>
+          <p><b>Telefon:</b> <%= admin.mobile %></p>
+        <% end %>
+        <% if admin.fax %>
+          <p><b>Fax:</b> <%= admin.fax %></p>
+        <% end %>
+      </div>
+    <% end %>
+</div>
