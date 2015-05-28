@@ -4,7 +4,7 @@
 <%= form_for(@offer, :html => {:multipart => true, :class => "form-horizontal"} ) do |f| %>
     <h4>Detalii generale</h4>
 
-    <% if !@offer.new_record %>
+    <% if !@offer.new_record? %>
     <h3>Cod Unic: <%= @offer.cod_unic %></h3>
     <% end %>
 
